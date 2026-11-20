@@ -1,442 +1,164 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>习概期末复习 · 全考点总表</title>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#a8322a">
+<title>习概期末 21 题 · 复习</title>
+<meta name="description" content="习近平新时代中国特色社会主义思想概论 期末复习 21 道重点题">
 <style>
-:root{
-  --ink:#2b2723; --paper:#fbf9f5; --line:#e5ded1; --accent:#a8322a; --accent-soft:#f5e9e5;
-  --muted:#7d7468; --code:#f1ece2;
-}
+:root{--bg:#f6f4ef;--card:#fff;--ink:#2b2823;--muted:#7d7468;--line:#e6e0d4;--accent:#a8322a;--accent2:#8f6a3c;--chip:#efe9dd;--ok:#2f7d57}
+@media (prefers-color-scheme:dark){:root{--bg:#14130f;--card:#1d1b17;--ink:#ece7dd;--muted:#9a9186;--line:#302c25;--accent:#e0705f;--accent2:#c9a06a;--chip:#26231d;--ok:#63b189}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font:16px/1.8 "PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased}
-a{color:inherit}
-.topbar{position:sticky;top:0;z-index:30;background:rgba(251,249,245,.94);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.topbar .in{max-width:1300px;margin:0 auto;padding:10px 22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.brand{font-weight:700;letter-spacing:.5px;font-size:15px}
-.brand small{font-weight:400;color:var(--muted);margin-left:10px;font-size:12px}
-.tools{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-button.chip{border:1px solid var(--line);background:#fff;color:var(--ink);padding:6px 14px;
-  border-radius:999px;font-size:13px;cursor:pointer;transition:.15s}
-button.chip:hover{border-color:var(--accent);color:var(--accent)}
-input.search{border:1px solid var(--line);background:#fff;border-radius:999px;
-  padding:6px 14px;font-size:13px;width:180px;font-family:inherit}
-input.search:focus{outline:none;border-color:var(--accent)}
-.wrap{max-width:1300px;margin:0 auto;padding:26px 22px 90px;display:grid;
-  grid-template-columns:250px minmax(0,1fr);gap:30px}
-nav.side{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;padding-right:4px}
-nav.side h4{font-size:11px;letter-spacing:3px;color:var(--muted);margin:0 0 12px;font-weight:600}
-nav.side a{display:block;text-decoration:none;font-size:13.5px;padding:8px 10px;border-radius:9px;
-  color:#4d4740;line-height:1.45;border-left:2px solid transparent}
-nav.side a span{color:var(--muted);font-size:11.5px;display:block;margin-top:1px}
-nav.side a:hover{background:#fff;color:var(--accent)}
-nav.side a.on{background:var(--accent-soft);color:var(--accent);font-weight:600;border-left-color:var(--accent)}
-main{min-width:0}
-.hero{border:1px solid var(--line);background:#fff;border-radius:18px;padding:24px 26px;margin-bottom:24px}
-.hero h1{margin:0 0 8px;font-size:23px;letter-spacing:.3px;line-height:1.5}
-.hero p{margin:0;color:var(--muted);font-size:13.5px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:11px;margin-top:18px}
-.tile{border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;
-  background:var(--paper);display:block;transition:.15s}
-.tile b{display:block;font-size:13.5px;font-weight:600;line-height:1.45}
-.tile i{font-style:normal;color:var(--muted);font-size:11.5px;display:block;margin-top:3px}
-.tile:hover{border-color:var(--accent);background:#fff;transform:translateY(-1px)}
-article.card{border:1px solid var(--line);background:#fff;border-radius:18px;margin-bottom:26px;overflow:hidden}
-.card-head{display:flex;gap:14px;align-items:flex-start;padding:20px 24px;
-  border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fdfaf5)}
-.badge{flex:0 0 auto;width:44px;height:44px;border-radius:13px;background:var(--accent);color:#fff;
-  display:grid;place-items:center;font-weight:700;font-size:15px}
-.card-head h2{margin:0;font-size:18.5px;line-height:1.45;letter-spacing:.2px}
-.card-head .meta{margin:5px 0 0;color:var(--muted);font-size:12.5px}
-.card-head label{margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap;
-  display:flex;gap:6px;align-items:center;cursor:pointer;user-select:none;padding-top:6px}
-.card-head input[type=checkbox]{accent-color:var(--accent);width:15px;height:15px;cursor:pointer}
-.card-body{padding:6px 24px 18px}
-.note{background:#fbf6ec;border:1px dashed var(--line);border-radius:11px;padding:12px 15px;
-  font-size:12.5px;color:#5e564b;margin:16px 0 4px;line-height:1.85}
-details{border-top:1px solid var(--line);padding:2px 0}
-details:first-of-type{border-top:0}
-summary{cursor:pointer;font-weight:700;font-size:15.5px;padding:13px 0;list-style:none;
-  display:block;position:relative;padding-left:20px;transition:.15s}
-summary::-webkit-details-marker{display:none}
-summary:before{content:"▸";position:absolute;left:0;top:14px;color:var(--accent);font-size:12px;
-  transition:transform .18s;display:inline-block}
-details[open]>summary:before{transform:rotate(90deg)}
-summary:hover{color:var(--accent)}
-.bd{padding:0 0 16px 20px;font-size:14.8px}
-.bd h4{font-size:15px;margin:20px 0 6px;color:#3b352e}
-.bd h5{font-size:14px;margin:14px 0 4px;color:#4a443c}
-p{margin:10px 0}
-strong{color:#8d281f;font-weight:600}
-blockquote{margin:13px 0;padding:11px 16px;border-left:3px solid var(--accent);
-  background:#fcf7f3;border-radius:0 9px 9px 0;color:#423c35;font-size:14.4px}
-code{background:var(--code);padding:1px 6px;border-radius:5px;font-size:.88em;
-  font-family:"SFMono-Regular",Consolas,monospace}
-ul,ol{margin:10px 0;padding-left:22px}
-li{margin:5px 0}
-.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;font-size:13.6px;background:#fff;min-width:420px}
-th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top;line-height:1.65}
-th{background:#f6f1e7;font-weight:700;white-space:nowrap}
-tbody tr:nth-child(even){background:#fdfcf9}
-footer{color:var(--muted);font-size:12.5px;text-align:center;padding:34px 10px 10px;line-height:2}
-.done{opacity:.5}
-.done .card-head{background:#f4f1ea}
-#toTop{position:fixed;right:22px;bottom:22px;border:1px solid var(--line);background:#fff;
-  border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:16px;display:none;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);color:var(--ink)}
-#toTop:hover{border-color:var(--accent);color:var(--accent)}
-@media (max-width:980px){
-  .wrap{grid-template-columns:1fr;padding:16px 14px 70px;gap:14px}
-  nav.side{position:static;max-height:none;display:flex;gap:8px;overflow-x:auto;padding:0 0 6px}
-  nav.side h4{display:none}
-  nav.side a{flex:0 0 auto;background:#fff;border:1px solid var(--line);border-radius:999px;
-    padding:6px 13px;font-size:12.5px;border-left:1px solid var(--line)}
-  nav.side a span{display:none}
-  nav.side a.on{background:var(--accent-soft)}
-  .card-head{padding:16px}
-  .card-body{padding:2px 16px 14px}
-  .bd{padding-left:12px}
-  .hero{padding:18px}
-  .hero h1{font-size:19px}
-}
-
-.exam{margin:16px 0 4px;border:1px solid #ecd9c9;border-radius:12px;overflow:hidden;background:#fffdf9}
-.eq{display:flex;gap:9px;padding:12px 15px;font-weight:700;font-size:15px;line-height:1.7;background:#fbefe4;color:#7d2c20}
-.eq .tag{flex:0 0 auto;background:#a8322a;color:#fff;font-size:11px;font-weight:600;border-radius:5px;padding:1px 7px;margin-top:4px;height:19px;line-height:17px}
-.alt{padding:9px 15px 0;font-size:12.5px;color:#7d7468;line-height:1.7}
-.tpl{padding:10px 15px 2px;font-size:14px}
-.tpl>b{display:block;font-size:11px;letter-spacing:2px;color:#a8322a;margin-bottom:7px;font-weight:700}
-.tpl ol{margin:0;padding-left:19px}
-.tpl li{margin:5px 0;line-height:1.75}
-.words{padding:6px 15px 12px;font-size:12px;color:#7d7468}
-.summary{border:1px solid var(--line);background:#fff;border-radius:18px;padding:0;margin-bottom:26px;overflow:hidden}
-.summary h2{margin:0;padding:18px 24px;font-size:17px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fdfaf5)}
-.summary .bd2{padding:14px 24px 20px}
-.summary table{min-width:0;font-size:13px}
-.summary th{background:#f6f1e7}
-.summary td:first-child{font-weight:700;color:var(--accent);white-space:nowrap}
-.summary td:nth-child(3){color:#5e564b}
-@media print{.exam{break-inside:avoid}.summary{break-inside:avoid}}
-
-@media print{
-  .topbar,nav.side,#toTop,.tools,.grid{display:none!important}
-  body{background:#fff;font-size:11pt;line-height:1.7}
-  .wrap{display:block;max-width:none;padding:0}
-  article.card{border:none;border-bottom:1px solid #ccc;border-radius:0;margin:0 0 8mm}
-  .card-head{background:none;padding:0 0 4mm;border-bottom:1px solid #000}
-  .card-body{padding:0}
-  .bd{padding-left:0}
-  details{border:0}
-  details>:not(summary){display:block}
-  .badge{background:#000}
-  strong{color:#000}
-  blockquote{background:#f7f7f7;border-left:2px solid #666}
-  .note{background:#f7f7f7}
-}
-
-.fw{padding:12px 15px 2px;border-top:1px dashed #ecd9c9;margin-top:6px}
-.fw>b{display:block;font-size:11px;letter-spacing:2px;color:#a8322a;margin-bottom:8px;font-weight:700}
-.fw p{margin:7px 0;font-size:14.2px;line-height:1.9;text-indent:2em}
-.fw .cnt{display:block;text-align:right;font-size:11.5px;color:#9a9186;padding:2px 0 10px}
-@media print{.fw{break-inside:auto}}
-</style>
-</head>
-<body>
-<div class="topbar"><div class="in">
-  <div class="brand">习概期末复习<small>10 个考点 · 老师划重点</small></div>
-  <div class="tools">
-    <input class="search" id="q" placeholder="搜索关键词…">
-    <button class="chip" id="expandAll">全部展开</button>
-    <button class="chip" id="collapseAll">自测模式</button>
-  </div>
-</div></div>
-
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;font-size:16px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+header.site{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;padding:10px 0}
+.brand{font-weight:800;letter-spacing:.5px;font-size:15px;white-space:nowrap}
+.brand i{font-style:normal;color:var(--accent)}
+.prog{flex:1;height:6px;background:var(--chip);border-radius:99px;overflow:hidden;min-width:60px}
+.prog>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.cnt{font-size:12.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+input#s{width:150px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font-size:13px;outline:none}
+input#s:focus{border-color:var(--accent)}
+.hero{padding:34px 0 8px}
+.hero h1{margin:0 0 10px;font-size:clamp(22px,4.4vw,34px);line-height:1.35;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{margin:0;color:var(--muted);font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;padding:16px 0 4px}
+.btn{cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 13px;border-radius:999px;font-size:13px;transition:.15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.chips{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:12.5px;color:var(--muted);max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips a b{color:var(--accent);font-weight:700;margin-right:4px}
+.chips a.done{background:var(--chip)}
+main{padding:18px 0 80px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 14px;overflow:hidden;scroll-margin-top:70px}
+.q-head{display:flex;gap:12px;align-items:flex-start;padding:16px 16px 14px;cursor:pointer}
+.q.no{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.qno{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;font-variant-numeric:tabular-nums}
+.qh{flex:1;min-width:0}
+.qh h2{margin:0;font-size:16.5px;line-height:1.55;font-weight:700}
+.qh .meta{margin-top:3px;font-size:12px;color:var(--muted)}
+.ck{flex:0 0 auto;display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);padding-top:4px}
+.ck input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
+.q-body{display:none;padding:0 16px 18px;border-top:1px dashed var(--line);margin-top:2px;font-size:15.5px}
+.q.open .q-body{display:block}
+.q-body p{margin:11px 0}
+.q-body .sub{margin:16px 0 8px;font-weight:700;color:var(--accent2);font-size:15px;letter-spacing:.5px}
+.q-body .li{position:relative;padding-left:1.9em;text-indent:-1.9em;margin:9px 0}
+.q-body .li .n{display:inline-block;min-width:1.9em;text-indent:0;color:var(--accent);font-weight:700}
+.q-body .note{margin:12px 0 0;padding:8px 12px;background:var(--chip);border-radius:8px;font-size:13px;color:var(--muted)}
+.ok{color:var(--ok);font-weight:700}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:12.5px}
+#top{position:fixed;right:16px;bottom:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;display:none;place-items:center;font-size:16px;z-index:20}
+#top.show{display:grid}
+@media (min-width:900px){.chips{display:none}main{max-width:1120px}}
+@media (max-width:899px){#desk-toc{display:none}}
+@media (max-width:420px){.bar{gap:8px}input#s{width:100px}.cnt{display:none}.brand{font-size:13.5px}.qno{width:30px;height:30px;font-size:13px}.qh h2{font-size:15.5px}}
+@media print{header.site,.tools,.chips,footer,#top,.ck{display:none!important}.q{break-inside:avoid;box-shadow:none}.q-body{display:block!important}body{background:#fff}}
+</style></head><body>
+<header class="site"><div class="wrap"><div class="bar">
+<span class="brand"><i>习概</i> · 期末 21 题</span>
+<div class="prog"><i id="pg"></i></div>
+<span class="cnt" id="pc">0 / 21</span>
+<input id="s" placeholder="搜索关键词" autocomplete="off">
+</div></div></header>
 <div class="wrap">
-<nav class="side">
-  <h4>考点导航</h4>
-<a href="#ksum">十题速查<span>题目与范文</span></a><a href="#k01">四个战略支撑<span>p279–281</span></a><a href="#k02">对台总体方略 · 十坚持<span>p310–311</span></a><a href="#k03">全面深化改革总目标<span>p98–99</span></a><a href="#k04">全过程人民民主<span>p164–169</span></a><a href="#k05">人类命运共同体<span>p329–330</span></a><a href="#k06">绿水青山就是金山银山<span>p244–245</span></a><a href="#k07">社会主义核心价值观<span>p212–213</span></a><a href="#k08">四次伟大飞跃<span>p36–37</span></a><a href="#k09">政绩观与民生治理<span>无照片</span></a><a href="#k10">中国式现代化五个特色<span>p44–45</span></a>
-</nav>
-<main>
-<div class="hero">
-  <h1>习近平新时代中国特色社会主义思想概论 · 期末重点总表</h1>
-  <p>按老师划重点的先后编号 ①–⑩ ｜ 整理于 2026-11-16 ｜ 老师说到此为止，后续还有，新增会继续接在后面</p>
-  <div class="grid"><a class="tile" href="#k01"><b>01 · 四个战略支撑</b><i>第十四章 · 建设巩固国防和强大人民军队</i></a><a class="tile" href="#k02"><b>02 · 对台总体方略 · 十坚持</b><i>第十五章 · 推进祖国完全统一（第三节）</i></a><a class="tile" href="#k03"><b>03 · 全面深化改革总目标</b><i>第五章 · 全面深化改革开放</i></a><a class="tile" href="#k04"><b>04 · 全过程人民民主</b><i>第八章 · 发展全过程人民民主（第二节）</i></a><a class="tile" href="#k05"><b>05 · 人类命运共同体</b><i>第十六章 · 中国特色大国外交</i></a><a class="tile" href="#k06"><b>06 · 绿水青山就是金山银山</b><i>第十二章 · 建设社会主义生态文明</i></a><a class="tile" href="#k07"><b>07 · 社会主义核心价值观</b><i>第九章 · 建设社会主义文化强国</i></a><a class="tile" href="#k08"><b>08 · 四次伟大飞跃</b><i>第二章 · 中国式现代化（第一节）</i></a><a class="tile" href="#k09"><b>09 · 政绩观与民生治理</b><i>开放题 · 可能有材料</i></a><a class="tile" href="#k10"><b>10 · 中国式现代化五个特色</b><i>第二章 · 中国式现代化（第二节）</i></a></div>
+<section class="hero">
+<h1>21 道重点题 · <em>点一下就能背</em></h1>
+<p>老师划的 21 个考点，按题号排好；手机端打开可勾选「已背」，翻页不丢进度。</p>
+<div class="tools">
+<button class="btn" id="open">全部展开</button>
+<button class="btn" id="close">全部收起</button>
+<button class="btn" id="undone">只看未背</button>
+<button class="btn" onclick="window.print()">打印 / 存 PDF</button>
 </div>
-<section class="summary" id="ksum"><h2>十道题速查 · 题目 / 写法 / 范文字数</h2><div class="bd2"><div class="tw"><table><thead><tr><th>#</th><th>考试题目</th><th>开头怎么写</th><th>范文</th></tr></thead><tbody><tr><td>01</td><td>简述新时代人民军队的使命任务。</td><td>开头一句：人民军队是执行党的政治任务的武装集团。</td><td>457 字</td></tr><tr><td>02</td><td>简述新时代党解决台湾问题的总体方略的主要内容。</td><td>定性一句：内涵丰富、逻辑严密、系统完备。</td><td>407 字</td></tr><tr><td>03</td><td>阐述全面深化改革的总目标。</td><td>原句照写，一字不改。</td><td>324 字</td></tr><tr><td>04</td><td>如何理解全过程人民民主是社会主义民主政治的本质属性？</td><td>定性八个字。</td><td>343 字</td></tr><tr><td>05</td><td>简述人类命运共同体的丰富内涵。</td><td>一句定义。</td><td>361 字</td></tr><tr><td>06</td><td>如何理解“绿水青山就是金山银山”？</td><td>定位一句。</td><td>330 字</td></tr><tr><td>07</td><td>阐述社会主义核心价值观的基本内容。</td><td>24 字三层。</td><td>323 字</td></tr><tr><td>08</td><td>党在百年奋斗历程中实现了哪四次伟大飞跃？</td><td>总起一个主题。</td><td>308 字</td></tr><tr><td>09</td><td>结合政绩观，谈谈推进新时代保障民生治理现代化的意义和作用。</td><td>立意一句。</td><td>271 字</td></tr><tr><td>10</td><td>中国式现代化有哪些中国特色？</td><td>总纲一句。</td><td>335 字</td></tr></tbody></table></div><p style="font-size:12.5px;color:#7d7468;margin:10px 0 0">每张卡片里都有整段范文，控制在 500 字以内，考场按范文改写即可。第 1 题题目为推测。</p></div></section><article class="card" id="k01"><div class="card-head"><span class="badge">01</span><div><h2>四个战略支撑</h2><p class="meta">第十四章 · 建设巩固国防和强大人民军队 · p279–281</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>简述新时代人民军队的使命任务。 <span style="color:#a8322a;font-size:12px">（原题未记到，此为推测）</span></span></div><div class="alt">备选问法：如何理解“四个战略支撑”？</div><div class="tpl"><b>结 构</b><ol><li>开头一句：人民军队是执行党的政治任务的武装集团。</li><li>中间四条：逐条写标题句＋一句展开。</li><li>结尾一句：三个“有信心、有能力”。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>人民军队是执行党的政治任务的武装集团，党和人民所需就是军队使命任务所系。进入新时代，党中央着眼中华民族伟大复兴这个国家和民族最高利益，对人民军队使命任务作出新定位、提出新要求，概括起来就是“四个战略支撑”。</p><p>一是为巩固中国共产党领导和我国社会主义制度提供战略支撑。执政必然要执军，人民军队必须坚决听党指挥，坚决保卫社会主义制度，坚决维护国家政权安全和社会大局稳定。</p><p>二是为捍卫国家主权、统一和领土完整提供战略支撑。我国陆地边界2.2万多千米、大陆海岸线1.8万多千米，是世界上邻国最多、海上安全环境十分复杂的国家之一，必须做好随时打硬仗的准备，决不丢失一寸领土。</p><p>三是为维护我国海外利益提供战略支撑。国家利益发展到哪里，安全保障就必须跟进到哪里，人民军队必须肩负起提供强有力军事保障的责任。</p><p>四是为促进世界和平与发展提供战略支撑。中国军队坚持积极防御，从未主动挑起战争、从未侵占别国一寸土地，必须履行同我国国际地位相称的责任和义务。</p><p>人民军队始终是党和人民完全可以信赖的英雄军队，有信心、有能力维护国家主权、统一和领土完整。</p><span class="cnt">约 457 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>范围：<strong>二、新时代人民军队使命任务</strong>（p279–p281），老师画圈重点<br>照片原件：`照片/p279.jpg`、`照片/p280.jpg`、`照片/p281.jpg`（后两张已做旋转校正，原图另存为 `*-raw-*.jpg`）</div><details open><summary>0. 老师到底划了什么</summary><div class="bd"><div class="tw"><table><thead><tr><th>标记</th><th>位置</th><th>含义</th></tr></thead><tbody><tr><td>手画大圈 + 横线</td><td>p279「二、新时代人民军队使命任务」</td><td>整个小标题是重点，会出简答/论述</td></tr><tr><td>波浪下划线</td><td>p280「对人民军队使命任务作出新定位、提出新要求，概括起来就是&quot;四个战略支撑&quot;」</td><td>定位句，要能写出来</td></tr><tr><td>手画圈 ①②③④ + 波浪线</td><td>p280–281 四条标题</td><td>四条必须背全、按顺序</td></tr><tr><td>波浪线</td><td>每条的第一句（标题句）</td><td>标题句一字不能错</td></tr></tbody></table></div></div></details><details open><summary>1. 定位句（原文）</summary><div class="bd"><p>人民军队是执行党的政治任务的武装集团，党和人民所需就是军队使命任务所系。人民军队自成立起，就始终为争取民族独立、人民解放和实现国家富强、人民幸福而英勇奋斗。</p>
-<p>进入新时代，以习近平同志为核心的党中央着眼<strong>实现中华民族伟大复兴这个国家和民族最高利益</strong>，对人民军队使命任务<strong>作出新定位、提出新要求</strong>，概括起来就是<strong>&quot;四个战略支撑&quot;</strong>。</p></div></details><details open><summary>2. 四个战略支撑（必背，顺序固定）</summary><div class="bd"><blockquote><strong>① 为巩固中国共产党领导和我国社会主义制度提供战略支撑。</strong><br><strong>② 为捍卫国家主权、统一和领土完整提供战略支撑。</strong><br><strong>③ 为维护我国海外利益提供战略支撑。</strong><br><strong>④ 为促进世界和平与发展提供战略支撑。</strong></blockquote>
-<p>一句话记忆链：<strong>保党保制 → 保主权领土 → 保海外利益 → 保世界和平</strong>（由内到外、由己及人）。</p>
-<h4>① 为巩固中国共产党领导和我国社会主义制度提供战略支撑</h4>
-<blockquote>⚠️ 标题句的落点在&quot;<strong>领导和制度</strong>&quot;两层——不能只写&quot;党的领导&quot;，也不能只写&quot;社会主义制度&quot;。阅卷最爱在这里扣分。</blockquote>
-<p><strong>正文（原文）</strong></p>
-<p>马克思主义认为，军队是政权建立和巩固的首要条件，执政必然要执军。任何政治力量要执掌好国家政权，都必须牢牢掌握军队这个&quot;枪杆子&quot;。苏共弱化军队政治工作，放弃对军队的领导，导致军队在社会主义国家生死存亡关键时刻倒向反对派，加快了苏联解体和苏共垮台，教训极其深刻。</p>
-<p>巩固党的长期执政地位，保证社会主义红色江山永不变色，人民军队担负着特殊使命、发挥着特殊作用。人民军队必须坚定站在党的旗帜下，坚决听党指挥，坚决保卫社会主义制度，坚决维护国家政权安全，坚决维护政治社会大局稳定。</p>
-<p><strong>骨架</strong></p>
-<ul><li>理论：军队是政权建立和巩固的首要条件 → 执政必然要执军 → 必须掌握&quot;枪杆子&quot;</li><li>反证：苏共放弃党对军队的领导 → 军队倒向反对派 → 苏联解体、苏共垮台</li><li>要求：四个&quot;坚决&quot;——听党指挥 / 保卫社会主义制度 / 维护国家政权安全 / 维护政治社会大局稳定</li></ul>
-<h4>② 为捍卫国家主权、统一和领土完整提供战略支撑</h4>
-<p><strong>正文（原文）</strong></p>
-<p>我国拥有 2.2 万多千米陆地边界、1.8 万多千米大陆海岸线，是世界上邻国最多、陆地边界最长、海上安全环境十分复杂的国家之一。</p>
-<p>世界上仍然存在一些敌视和威胁我国的势力，我国还没有实现祖国完全统一，同周边有些国家存在领土主权和海洋权益争端，维护领土主权、海洋权益和国家统一的任务艰巨繁重。</p>
-<p>人民军队始终是捍卫国家主权、统一和领土完整的坚强柱石，必须做好随时打硬仗的准备，坚决捍卫国家核心利益，<strong>决不后退一步，决不丢失一寸领土</strong>。</p>
-<p><strong>骨架</strong></p>
-<ul><li>国情数字：2.2 万千米陆界、1.8 万千米海岸线（两个数字常考填空）</li><li>三重压力：外部敌视势力 / 尚未完全统一 / 周边领土海洋权益争端</li><li>态度：随时打硬仗、&quot;两个决不&quot;</li></ul>
-<h4>③ 为维护我国海外利益提供战略支撑</h4>
-<p><strong>正文（原文）</strong></p>
-<p>海外利益是我国国家利益的重要组成部分。随着我国全方位对外开放不断扩大，我国与世界各国的贸易往来、文化科技交流日趋频繁，越来越多的企业、机构和人员走出国门，使我国的国家利益快速向海外延伸。</p>
-<p>与此同时，来自政局动荡、恐怖袭击、自然灾害、意外事故等的各种风险和威胁迅速增多，海外安全保障问题更加凸显。<strong>国家利益发展到哪里，安全保障就必须跟进到哪里。</strong></p>
-<p>有效维护海外中国公民、组织和机构的安全和正当权益，是人民军队担负的重要任务。在我国海外利益、公民安全遭受威胁时，人民军队必须肩负起提供强有力军事保障的责任。</p>
-<p><strong>骨架</strong></p>
-<ul><li>定性：海外利益是国家利益的重要组成部分</li><li>原因：走出去的人财物越来越多 + 四类风险（政局动荡、恐怖袭击、自然灾害、意外事故）</li><li>金句：<strong>国家利益发展到哪里，安全保障就必须跟进到哪里</strong></li></ul>
-<h4>④ 为促进世界和平与发展提供战略支撑</h4>
-<p><strong>正文（原文）</strong></p>
-<p>一个和平稳定繁荣的中国，是世界的机遇和福祉。一支强大的中国军队，是维护世界和平稳定、服务构建人类命运共同体的坚定力量。</p>
-<p>中国军队坚持积极防御的战略方针，<strong>我们从未主动挑起过任何一场战争和冲突，从未侵占别国一寸土地</strong>。</p>
-<p>新时代，人民军队必须适应推动构建人类命运共同体的战略要求，积极履行同我国国际地位相称的责任和义务，为维护和平的国际环境和周边环境发挥更大作用。</p>
-<p><strong>骨架</strong></p>
-<ul><li>两个判断：和平稳定繁荣的中国＝世界的机遇和福祉；强大的中国军队＝维护世界和平稳定的坚定力量</li><li>事实：积极防御 + 两个&quot;从未&quot;</li><li>要求：适应人类命运共同体要求、履行大国责任</li></ul></div></details><details open><summary>3. 收尾句（三个&quot;有信心、有能力&quot;）</summary><div class="bd"><p>在全面建成社会主义现代化强国、实现第二个百年奋斗目标的历史进程中，人民军队始终是<strong>党和人民完全可以信赖的英雄军队</strong>，</p>
-<ul><li>有信心、有能力维护国家主权、统一和领土完整，</li><li>有信心、有能力为实现中华民族伟大复兴提供战略支撑，</li><li>有信心、有能力为世界和平与发展作出更大贡献。</li></ul>
-<blockquote>这三句正好倒着覆盖 ②③④，可与&quot;四个战略支撑&quot;配对背。</blockquote></div></details><details open><summary>4. 可能怎么考</summary><div class="bd"><ol><li><strong>简答/论述</strong>：新时代人民军队的使命任务是什么？（答：四个战略支撑，逐条展开）</li><li><strong>简答</strong>：如何理解&quot;四个战略支撑&quot;的内在逻辑？（由内到外：制度安全—主权安全—海外利益—世界和平）</li><li><strong>辨析/材料</strong>：为什么说&quot;军队是执行党的政治任务的武装集团&quot;？（用 ① 的苏共教训做反证）</li><li><strong>名词解释</strong>：枪杆子、积极防御、人类命运共同体（结合 ④）</li><li><strong>填空</strong>：2.2 万千米陆地边界；1.8 万千米大陆海岸线；&quot;国家利益发展到哪里，安全保障就必须跟进到哪里&quot;</li></ol></div></details><details open><summary>5. 背诵顺序（10 分钟版）</summary><div class="bd"><ol><li>先背四条标题句（一字不错）</li><li>每条只背三个抓手：① 执军—苏共—四个坚决；② 两个数字—三重压力—两个决不；③ 定性—四类风险—金句；④ 两个判断—两个从未—一个要求</li><li>最后补收尾三个&quot;有信心、有能力&quot;</li></ol></div></details></div></article><article class="card" id="k02"><div class="card-head"><span class="badge">02</span><div><h2>对台总体方略 · 十坚持</h2><p class="meta">第十五章 · 推进祖国完全统一（第三节） · p310–311</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>简述新时代党解决台湾问题的总体方略的主要内容。</span></div><div class="alt">备选问法：如何理解对台工作的“十坚持”？</div><div class="tpl"><b>结 构</b><ol><li>定性一句：内涵丰富、逻辑严密、系统完备。</li><li>十条连写：每条“坚持……，这是统一的……”。</li><li>收尾一句：科学指南和行动纲领。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>新时代党解决台湾问题的总体方略，内涵丰富、逻辑严密、系统完备，是我们党对台大政方针的继承发展和集大成。全面贯彻这一方略，必须做到“十个坚持”。</p><p>坚持党中央对对台工作的集中统一领导，这是统一的根本保证；坚持在中华民族伟大复兴进程中推进祖国统一，这是统一的历史方位；坚持在祖国大陆发展进步基础上解决台湾问题，这是统一的战略思路；坚持“和平统一、一国两制”基本方针，这是统一的大政方针；坚持一个中国原则和“九二共识”，这是统一的政治基础。</p><p>坚持推动两岸关系和平发展、融合发展，这是统一的实践途径；坚持团结台湾同胞、争取台湾民心，这是统一的根本动力；坚持粉碎“台独”分裂图谋，这是统一的必然要求；坚持反对外部势力干涉，这是统一的外部条件；坚持决不承诺放弃使用武力，这是统一的战略支撑。</p><p>这一方略科学回答了在民族复兴伟大进程中实现祖国完全统一的时代命题，标志着我们党的国家统一理论更加成熟，是推进祖国统一大业的科学指南和行动纲领。</p><span class="cnt">约 407 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：第十五章（按页码排在第十四章&quot;国防和军队&quot;之后；书眉只印&quot;第三节 推进祖国完全统一&quot;）→ <strong>第三节 → 二、坚持贯彻新时代党解决台湾问题的总体方略</strong>（p310–p311）<br>照片：`照片/p310.jpg`、`照片/p311.jpg`<br>老师标记：「二、」画大圈；<strong>十条全部编号 ①–⑩ 并画波浪线</strong>——这是本节的主体，必背</div><details open><summary>1. 铺垫：为什么要提&quot;总体方略&quot;（p310）</summary><div class="bd"><p>随着国际国内形势的深刻复杂变化，解决台湾问题、实现祖国完全统一，必须有新的思路和方略。党的十八大以来，以习近平同志为核心的党中央把握历史大势和时代变化，丰富和发展国家统一理论和对台方针政策，就对台工作提出一系列重要理念、重大政策主张，形成新时代党解决台湾问题的总体方略，为新时代解决台湾问题、实现祖国完全统一指明了方向。</p>
-<p><strong>定性（p310）</strong></p>
-<blockquote>新时代党解决台湾问题的总体方略<strong>内涵丰富、逻辑严密、系统完备</strong>，深刻回答了推进祖国统一的一系列重大理论和实践问题，是我们党对台大政方针的<strong>继承发展和集大成</strong>。</blockquote></div></details><details open><summary>2. 十坚持（核心，①—⑩ 全背）</summary><div class="bd"><div class="tw"><table><thead><tr><th>#</th><th>内容</th><th>这是统一的……</th></tr></thead><tbody><tr><td>①</td><td><strong>必须</strong>坚持党中央对对台工作的集中统一领导</td><td><strong>根本保证</strong></td></tr><tr><td>②</td><td>坚持在中华民族伟大复兴进程中推进祖国统一</td><td><strong>历史方位</strong></td></tr><tr><td>③</td><td>坚持在祖国大陆发展进步基础上解决台湾问题</td><td><strong>战略思路</strong></td></tr><tr><td>④</td><td>坚持&quot;和平统一、一国两制&quot;基本方针</td><td><strong>大政方针</strong></td></tr><tr><td>⑤</td><td>坚持一个中国原则和&quot;九二共识&quot;</td><td><strong>政治基础</strong></td></tr><tr><td>⑥</td><td>坚持推动两岸关系和平发展、融合发展</td><td><strong>实践途径</strong></td></tr><tr><td>⑦</td><td>坚持团结台湾同胞、争取台湾民心</td><td><strong>根本动力</strong></td></tr><tr><td>⑧</td><td>坚持粉碎&quot;台独&quot;分裂图谋</td><td><strong>必然要求</strong></td></tr><tr><td>⑨</td><td>坚持反对外部势力干涉</td><td><strong>外部条件</strong></td></tr><tr><td>⑩</td><td>坚持决不承诺放弃使用武力</td><td><strong>战略支撑</strong></td></tr></tbody></table></div>
-<p><strong>原文连读</strong>（就是书上那一段，分号连缀）</p>
-<blockquote>全面贯彻新时代党解决台湾问题的总体方略，①必须坚持党中央对对台工作的集中统一领导，这是统一的根本保证；②坚持在中华民族伟大复兴进程中推进祖国统一，这是统一的历史方位；③坚持在祖国大陆发展进步基础上解决台湾问题，这是统一的战略思路；④坚持&quot;和平统一、一国两制&quot;基本方针，这是统一的大政方针；⑤坚持一个中国原则和&quot;九二共识&quot;，这是统一的政治基础；⑥坚持推动两岸关系和平发展、融合发展，这是统一的实践途径；⑦坚持团结台湾同胞、争取台湾民心，这是统一的根本动力；⑧坚持粉碎&quot;台独&quot;分裂图谋，这是统一的必然要求；⑨坚持反对外部势力干涉，这是统一的外部条件；⑩坚持决不承诺放弃使用武力，这是统一的战略支撑。</blockquote>
-<blockquote>注意：只有第①条前有&quot;<strong>必须</strong>&quot;二字，其余九条都没有。默写时容易整段加&quot;必须&quot;或整段丢&quot;必须&quot;，按书上只加第一条。</blockquote></div></details><details open><summary>3. 意义（p311）</summary><div class="bd"><p>新时代党解决台湾问题的总体方略，<strong>科学回答了在民族复兴伟大进程中实现祖国完全统一的时代命题</strong>，标志着我们党的国家统一理论更加成熟，是我们党解决台湾问题、实现祖国统一的<strong>最新理论成果</strong>，是新时代新征程推进祖国统一大业的<strong>科学指南和行动纲领</strong>，必须长期坚持、全面贯彻。</p>
-<p>四个定位词：时代命题 → 理论更加成熟 → 最新理论成果 → 科学指南和行动纲领。</p></div></details><details open><summary>4. 同一页的底线表述（p310 上半，老师没画但常作材料题）</summary><div class="bd"><blockquote>统一是历史大势，是正道；&quot;台独&quot;是历史逆流，是绝路。对两岸关系和平发展的最大现实威胁是&quot;台独&quot;势力及其分裂活动。……&quot;台独&quot;分裂是祖国统一的最大障碍，是民族复兴的严重隐患。我们坚决维护国家主权和领土完整，愿意为和平统一创造广阔空间，但绝不为各种形式的&quot;台独&quot;分裂活动留下任何空间。</blockquote>
-<p>三个&quot;最大&quot;值得记：最大<strong>现实威胁</strong>＝&quot;台独&quot;势力及其分裂活动；最大<strong>障碍</strong>＝&quot;台独&quot;分裂；严重<strong>隐患</strong>＝（&quot;台独&quot;分裂是）民族复兴的严重隐患。</p></div></details><details open><summary>5. 紧接着的「三、」（p311 起，还没拍全）</summary><div class="bd"><blockquote>把握两岸关系主导权和主动权，推动两岸关系朝着正确方向发展，必须坚持一个中国原则和&quot;九二共识&quot;，坚决反对&quot;台独&quot;分裂行径，坚决反对外部势力干涉。</blockquote></div></details><details open><summary>6. 易混提醒 ⚠️</summary><div class="bd"><p>&quot;<strong>战略支撑</strong>&quot;这个词在两处都出现，别串：</p>
-<ul><li>第十四章「四个战略支撑」——<strong>人民军队的使命任务</strong></li><li>第十五章 十坚持第⑩条——&quot;<strong>决不承诺放弃使用武力</strong>，这是统一的战略支撑&quot;</li></ul>
-<p>考场上问&quot;战略支撑&quot;，先看题目问的是军队使命还是对台方略。</p></div></details><details open><summary>7. 可能怎么考</summary><div class="bd"><ol><li><strong>简答/论述</strong>：新时代党解决台湾问题的总体方略的主要内容是什么？（十坚持，逐条＋定位词）</li><li><strong>匹配题</strong>：给十个定位词，匹配十条内容（最考细节）</li><li><strong>简答</strong>：如何理解&quot;和平统一、一国两制&quot;是统一的大政方针？</li><li><strong>材料题</strong>：结合&quot;台独是历史逆流、是绝路&quot;，谈为什么必须坚持决不承诺放弃使用武力。</li><li><strong>辨析</strong>：总体方略是我们党对台大政方针的&quot;继承发展和集大成&quot;——为什么用&quot;继承发展&quot;而不是&quot;另起炉灶&quot;？</li></ol></div></details><details open><summary>8. 背诵顺序</summary><div class="bd"><p>十坚持按&quot;<strong>保证 → 方位 → 思路 → 方针 → 基础 → 途径 → 动力 → 要求 → 条件 → 支撑</strong>&quot;十个词串起来，先背定位词，再回填内容，比按原文顺序硬背快。</p></div></details></div></article><article class="card" id="k03"><div class="card-head"><span class="badge">03</span><div><h2>全面深化改革总目标</h2><p class="meta">第五章 · 全面深化改革开放 · p98–99</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>阐述全面深化改革的总目标。</span></div><div class="alt">备选问法：如何理解“完善和发展中国特色社会主义制度、推进国家治理体系和治理能力现代化”？</div><div class="tpl"><b>结 构</b><ol><li>原句照写，一字不改。</li><li>拆两句：前句管方向，后句管效能。</li><li>补落实与意义。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>全面深化改革的总目标是：完善和发展中国特色社会主义制度、推进国家治理体系和治理能力现代化。这一总目标是一个内涵丰富的有机整体，两句话都讲，才是完整的、全面的。</p><p>“完善和发展中国特色社会主义制度”规定了改革的根本方向。无论改什么、怎么改，都要坚持党的领导、坚持中国特色社会主义，推动制度更加成熟更加定型、更好发挥制度优越性。</p><p>“推进国家治理体系和治理能力现代化”明确了改革的鲜明指向和时代要求。要通过改革增强制度活力，把制度优势转化为治理效能。</p><p>落实总目标，要实施好“六个紧紧围绕”的路线图，以总目标为引领、以制度建设为主线、以经济体制改革为重点、以重要领域和关键环节改革为突破口。</p><p>这一总目标的提出，标志着我们党对社会主义建设规律和改革开放规律认识的深化。</p><span class="cnt">约 324 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：第五章《全面深化改革开放》→ <strong>一、坚持全面深化改革总目标</strong>（p98–p99）<br>照片：`照片/p98.jpg`、`照片/p99.jpg`<br>老师标记：总目标两句话整段重下划线；&quot;①&quot;&quot;②&quot;分别标在两句话上；&quot;这一总目标的提出，标志着……&quot;处画竖线挑出</div><details open><summary>1. 原文（背这一段）</summary><div class="bd"><blockquote><strong>全面深化改革总目标是：完善和发展中国特色社会主义制度、推进国家治理体系和治理能力现代化。</strong></blockquote>
-<blockquote>这一总目标是一个内涵丰富的<strong>有机整体</strong>，<strong>两句话都讲，才是完整的、全面的</strong>。</blockquote>
-<p>⚠️ 这是本节最容易丢分的地方：只写前半句（完善和发展中国特色社会主义制度）＝<strong>答不全</strong>；两句都写但不解释关系＝<strong>答不深</strong>。</p></div></details><details open><summary>2. 两句话各管什么（老师用①②分开标的那两段）</summary><div class="bd"><h4>① &quot;完善和发展中国特色社会主义制度&quot;——规定了改革的<strong>根本方向</strong></h4>
-<blockquote>就是无论改什么、怎么改，都要坚持中国共产党领导、坚持中国特色社会主义，就是要通过改革推动中国特色社会主义制度<strong>更加成熟更加定型</strong>、更好发挥中国特色社会主义制度的<strong>优越性</strong>。</blockquote>
-<p>三个要点：改什么、怎么改 → <strong>党的领导不动摇</strong>；目标是制度<strong>成熟定型</strong>；落点是制度<strong>优越性</strong>。</p>
-<h4>② &quot;推进国家治理体系和治理能力现代化&quot;——明确了改革的<strong>鲜明指向和时代要求</strong></h4>
-<blockquote>就是要通过改革进一步增强我国<strong>制度活力</strong>，把<strong>制度优势转化为国家治理效能</strong>。</blockquote>
-<p>一句话概括：①讲<strong>制度本身</strong>（建得好不好），②讲<strong>治理效能</strong>（用得好不好）。制度是优势，效能才是结果。</p></div></details><details open><summary>3. 为什么要提总目标（背景，答题开头用）</summary><div class="bd"><ul><li>新时代全面深化改革具有<strong>全面性、系统性、整体性</strong>的鲜明特点，必须作为一个<strong>系统工程</strong>来把握</li><li>习近平：&quot;全面深化改革，全面者，就是要统筹推进各领域改革，就需要有管总的目标，也要回答推进各领域改革最终是为了什么、要取得什么样的整体结果这个问题。&quot;</li><li>党的<strong>十八届三中全会</strong>：对全面深化改革进行顶层设计、系统规划和总体部署，明确了总目标和主要任务</li><li>党的<strong>十九届四中全会</strong>：系统总结十八大以来改革开放的<strong>理论成果、制度成果、实践成果</strong>，勾勒出更加清晰的蓝图</li></ul></div></details><details open><summary>4. 意义（p98 末–p99 首）</summary><div class="bd"><blockquote>这一总目标的提出，标志着我们党对<strong>社会主义建设规律和改革开放规律</strong>认识的深化，对于新时代统筹推进各领域各方面的改革，对于决胜全面建成小康社会、全面建设社会主义现代化国家、全面推进中华民族伟大复兴具有<strong>重大指导意义</strong>。</blockquote>
-<p>记忆：两个&quot;规律&quot;（建设规律、改革开放规律）＋ 三个&quot;对于&quot;。</p></div></details><details open><summary>5. 延伸：怎么落实总目标（p99，&quot;六个紧紧围绕&quot;，常考）</summary><div class="bd"><blockquote>全面深化改革必须牢牢把握总目标，实施好&quot;<strong>六个紧紧围绕</strong>&quot;的路线图。</blockquote>
-<div class="tw"><table><thead><tr><th>紧紧围绕</th><th>深化什么改革</th></tr></thead><tbody><tr><td>使市场在资源配置中起决定性作用和更好发挥政府作用</td><td>经济体制改革</td></tr><tr><td>坚持党的领导、人民当家作主、依法治国有机统一</td><td>政治体制改革</td></tr><tr><td>建设社会主义核心价值体系、社会主义文化强国</td><td>文化体制改革</td></tr><tr><td>更好保障和改善民生、促进社会公平正义</td><td>社会体制改革</td></tr><tr><td>建设美丽中国</td><td>生态文明体制改革</td></tr><tr><td>提高科学执政、民主执政、依法执政水平</td><td>党的建设制度改革</td></tr></tbody></table></div>
-<p>这六个方面明确了经济、政治、文化、社会、生态文明体制和党的建设制度深化改革的<strong>分目标</strong>，规定了各领域各方面改革的<strong>主要任务</strong>，是落实总目标、推进各领域各方面改革的<strong>基本遵循</strong>，构建起新时代全面深化改革的<strong>系统工程</strong>。</p>
-<p><strong>统筹推进的&quot;四以&quot;</strong>（p99，简答高频）</p>
-<blockquote>必须以<strong>全面深化改革总目标</strong>为引领，以<strong>制度建设</strong>为主线，以<strong>经济体制改革</strong>为重点，以<strong>重要领域和关键环节改革</strong>为突破口，使各方面改革协同推进、环环相扣、形成合力。</blockquote></div></details><details open><summary>6. 紧接的「二、推进国家治理体系和治理能力现代化」（p99）</summary><div class="bd"><blockquote>中国特色社会主义制度是在实践中不断完善的。20 世纪 90 年代，邓小平曾经指出：&quot;恐怕再有三十年的时间，我们才会在各方面形成一整套更加成熟、更加定型的制度。&quot;治理国家，<strong>制度是起根本性、全局性、长远性作用的</strong>，然而<strong>没有有效的治理能力，再好的制度也难以发挥作用</strong>。</blockquote>
-<p>这段话是&quot;制度与治理能力关系&quot;辨析题的现成答案：制度管根本、全局、长远，治理能力是把制度优势变成治理效能的关键，二者不可偏废。</p></div></details><details open><summary>7. 可能怎么考</summary><div class="bd"><ol><li><strong>简答</strong>：全面深化改革的总目标是什么？如何理解？→ 两句＋各自定位＋有机整体</li><li><strong>辨析</strong>：&quot;全面深化改革的总目标就是完善和发展中国特色社会主义制度。&quot;→ 错误，缺后半句，割裂了制度与治理</li><li><strong>论述</strong>：如何把握&quot;完善和发展中国特色社会主义制度&quot;与&quot;推进国家治理体系和治理能力现代化&quot;的关系？→ 方向与指向、制度与效能</li><li><strong>简答</strong>：&quot;六个紧紧围绕&quot;包括哪些方面？→ 六个领域＋对应改革</li><li><strong>填空</strong>：总目标以<strong>制度建设</strong>为主线，以<strong>经济体制改革</strong>为重点</li></ol></div></details><details open><summary>8. 背诵顺序</summary><div class="bd"><p>先背两句原文 → 再背两个定位词（<strong>根本方向</strong> / <strong>鲜明指向和时代要求</strong>）→ 再背两个落点（<strong>成熟定型＋优越性</strong> / <strong>制度活力＋治理效能</strong>）→ 最后补&quot;六个紧紧围绕&quot;和&quot;四以&quot;。</p></div></details></div></article><article class="card" id="k04"><div class="card-head"><span class="badge">04</span><div><h2>全过程人民民主</h2><p class="meta">第八章 · 发展全过程人民民主（第二节） · p164–169</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>如何理解全过程人民民主是社会主义民主政治的本质属性？</span></div><div class="alt">备选问法：简述全过程人民民主的丰富内涵。</div><div class="tpl"><b>结 构</b><ol><li>定性八个字。</li><li>四个统一。</li><li>三全＋三最。</li><li>一句收尾。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>全过程人民民主是社会主义民主政治的本质属性，是最广泛、最真实、最管用的民主，是党团结带领人民追求民主、发展民主、实现民主的伟大创造。</p><p>一是实现了“四个统一”：过程民主和成果民主、程序民主和实质民主、直接民主和间接民主、人民民主和国家意志相统一。</p><p>二是覆盖“全链条、全方位、全覆盖”。把民主选举、民主协商、民主决策、民主管理、民主监督贯通起来，贯通国家政治生活和社会生活各层面各维度，贯穿“五位一体”总体布局和“四个全面”战略布局。</p><p>三是体现为“三最”。最广泛，全体人民共同持续参与；最真实，党的主张、国家意志、人民意愿融为一体，说了有人听、听了有反馈；最管用，民主不是装饰品，而是用来解决人民要解决的问题的。</p><p>因此，全过程人民民主既有完整的制度程序，又有完整的参与实践，真正实现了人民当家作主。</p><span class="cnt">约 343 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：<strong>第八章 发展全过程人民民主 → 第二节 全过程人民民主是社会主义民主政治的本质属性</strong>（p164–169）<br>照片：`照片/p164.jpg` – `照片/p169.jpg`<br>老师标记：节标题下划波浪线；三个&quot;目&quot;标题全部圈画；页上手写口诀；四个&quot;统一&quot;处圈关键词；三个&quot;全&quot;、三个&quot;最&quot;逐一画圈</div><details open><summary>0. 一句话答案（先背这句）</summary><div class="bd"><blockquote>全过程人民民主是社会主义民主政治的本质属性，是<strong>最广泛、最真实、最管用的民主</strong>。</blockquote>
-<p>这是党的二十大原文，也是这一节的总纲。<strong>&quot;本质属性&quot;＋&quot;三最&quot;</strong> 八个字决定整道题的分数起点。</p></div></details><details open><summary>1. 这道题的骨架（老师手写口诀）</summary><div class="bd"><blockquote>页上手写：<strong>三全 · 三最 · 四统一</strong></blockquote>
-<div class="tw"><table><thead><tr><th>层级</th><th>内容</th><th>在哪一&quot;目&quot;</th></tr></thead><tbody><tr><td><strong>四统一</strong></td><td>过程民主与成果民主、程序民主与实质民主、直接民主与间接民主、人民民主与国家意志</td><td>一、伟大创造（p165）</td></tr><tr><td><strong>三全</strong></td><td>全链条、全方位、全覆盖</td><td>二、（p166–167）</td></tr><tr><td><strong>三最</strong></td><td>最广泛、最真实、最管用</td><td>三、（p168–169）</td></tr></tbody></table></div>
-<p>答题顺序就是：<strong>是什么（本质属性＋伟大创造）→ 四统一（内在机理）→ 三全（覆盖范围）→ 三最（实践效果）</strong>。</p></div></details><details open><summary>2. 第一层：全过程人民民主是社会主义民主政治的<strong>伟大创造</strong></summary><div class="bd"><p><strong>节首定位段（p164）</strong></p>
-<blockquote>全过程人民民主，是中国共产党团结带领人民追求民主、发展民主、实现民主的<strong>伟大创造</strong>，是党不断推进中国民主<strong>理论创新、制度创新、实践创新</strong>的经验结晶。全过程人民民主是社会主义民主政治的<strong>本质属性</strong>，是最广泛、最真实、最管用的民主。</blockquote>
-<p><strong>一、伟大创造（p164–165）</strong></p>
-<blockquote>全过程人民民主<strong>植根于我国社会主义民主的长期实践</strong>，是中国特色社会主义民主政治理论和实践的重大成果。党的十八大以来，以习近平同志为核心的党中央坚持<strong>党的领导、人民当家作主、依法治国有机统一</strong>，积极回应人民对民主政治的新要求新期待，提出全过程人民民主重大理念，推动全过程人民民主取得历史性成就，<strong>拓展了社会主义民主政治的理论和实践内涵，丰富了人类政治文明形态</strong>。</blockquote>
-<p><strong>提出脉络（时间线，简答题的&quot;过程&quot;分点）</strong></p>
-<div class="tw"><table><thead><tr><th>时间</th><th>事件</th></tr></thead><tbody><tr><td>2019.11</td><td>习近平在上海虹桥街道考察全国人大常委会法工委基层立法联系点：&quot;<strong>人民民主是一种全过程的民主</strong>&quot;</td></tr><tr><td>2021.7</td><td>庆祝建党 100 周年大会：&quot;发展全过程人民民主&quot;</td></tr><tr><td>2021.10</td><td>中央人大工作会议：对重大理念和实践要求作出<strong>系统阐述</strong></td></tr><tr><td>十九届六中全会</td><td>把&quot;发展全过程人民民主&quot;作为习近平新时代中国特色社会主义思想的重要内容</td></tr><tr><td>二十大</td><td>提出&quot;<strong>全过程人民民主是社会主义民主政治的本质属性</strong>&quot;，作出全面部署</td></tr></tbody></table></div>
-<p><strong>这一段的意义句</strong></p>
-<blockquote>全过程人民民主的提出、实践和发展，鲜明展示了我们党始终<strong>高举人民民主旗帜、实现人民当家作主的坚定立场</strong>，深刻彰显了我国人民民主的<strong>鲜明特色和显著优势</strong>，实现了<strong>过程民主和成果民主、程序民主和实质民主、直接民主和间接民主、人民民主和国家意志相统一</strong>。</blockquote></div></details><details open><summary>3. 四统一（内在机理，最考&quot;理解&quot;的一层）</summary><div class="bd"><h4>① 过程民主和成果民主的统一（p165）</h4>
-<blockquote>全过程人民民主<strong>始终将实现最广大人民根本利益作为民主政治建设的出发点和落脚点</strong>。人民享有广泛而充分的民主，当家作主的权利贯通依法管理国家事务、管理经济和文化事业、管理社会事务的<strong>各方面各环节全过程</strong>。党和国家始终把人民利益作为<strong>基本政治考量和根本政治准则</strong>，在决策、执行、监督、落实各个环节都要倾听来自人民的声音，汇聚人民的智慧，使社会主义民主政治的成果惠及广大人民。</blockquote>
-<p>要点：<strong>起点</strong>是人民根本利益，<strong>过程</strong>是各方面各环节，<strong>结果</strong>是成果惠及人民。</p>
-<h4>② 程序民主和实质民主的统一（p165）</h4>
-<blockquote>全过程人民民主具有<strong>完整的制度程序</strong>，构建了多样、畅通、有序的民主渠道，国家法律法规、方针政策都依照程序、经过民主酝酿，通过科学决策、民主决策产生。全过程人民民主<strong>更加注重实质民主</strong>：<br>· 不仅保障人民的<strong>投票权</strong>，而且确保人民拥有<strong>广泛参与权</strong>；<br>· 不仅重视对人民的<strong>政治承诺</strong>，而且确保这些承诺<strong>得到实现</strong>；<br>· 不仅完善<strong>权力运行规则和程序</strong>，而且确保权力真正<strong>受到人民监督和制约</strong>，<br>使民主从<strong>价值理念</strong>变成扎根中国大地的<strong>制度形态、治理机制和人民的生活方式</strong>。</blockquote>
-<p>三个&quot;不仅…而且…&quot;是最好背的一组排比。</p>
-<h4>③ 直接民主和间接民主的统一（p165–166）</h4>
-<blockquote>党和国家一直致力于丰富民主形式，拓宽民主渠道，既不断扩大<strong>直接民主</strong>又发展多种形式的<strong>间接民主</strong>，使人民民主的形式和内容更加<strong>广泛、更加充分、更加健全</strong>。<br>· 间接：通过选举各级人大代表、组成各级人民代表大会行使国家权力，参与国家和社会事务管理<br>· 直接：通过村民委员会、居民委员会、职工代表大会等制度安排，参与基层民主实践<br>· 还可以通过多种渠道和形式表达诉求和意愿</blockquote>
-<h4>④ 人民民主和国家意志的统一（p166）</h4>
-<blockquote>中华人民共和国的一切权力属于人民，国家权力是为人民服务的，人民行使国家权力的机关是<strong>全国人民代表大会和地方各级人民代表大会</strong>。这种民主制度<strong>既充分反映了人民的意愿，又充分体现了国家意志</strong>。党和国家不断完善人民表达意愿的平台和载体，吸纳民意、汇集民智，使得<strong>党、国家和人民成为目标相同、利益一致、相互交融、同心同向的整体</strong>，从根本上实现了人民民主和国家意志的有机统一。</blockquote></div></details><details open><summary>4. 第二层：全过程人民民主是<strong>全链条、全方位、全覆盖</strong>的民主（p166–167）</summary><div class="bd"><p><strong>总起（老师重点划线）</strong></p>
-<blockquote>全过程人民民主，<strong>既有完整的制度程序，也有完整的参与实践</strong>，把<strong>民主选举、民主协商、民主决策、民主管理、民主监督</strong>贯通起来，涵盖经济、政治、文化、社会、生态文明等各个方面，聚焦<strong>国家发展大事、社会治理难事、百姓日常琐事</strong>，具有<strong>时间上的连续性、内容上的整体性、运行上的协同性、人民参与上的广泛性和持续性</strong>。</blockquote>
-<h4>全链条（p166–167）</h4>
-<div class="tw"><table><thead><tr><th>环节</th><th>人民做什么</th></tr></thead><tbody><tr><td>民主选举</td><td>通过选举、投票行使权利，选出代表自己意愿的人来掌握并行使权力</td></tr><tr><td>民主协商</td><td>在重大决策之前和决策实施之中充分协商，尽可能就共同性问题取得一致意见</td></tr><tr><td>民主决策</td><td>通过多种方式广泛参与，越来越多的群众意见转化为党和政府的重大决策</td></tr><tr><td>民主管理</td><td>行使宪法赋予的各项权利、承担宪法赋予公民的责任义务，广泛参与国家政治生活和社会生活的管理</td></tr><tr><td>民主监督</td><td>建立健全各种监督制度，对各级国家工作人员履职情况进行监督，保证人民赋予的权力始终用来为人民谋利益</td></tr></tbody></table></div>
-<blockquote>这些环节<strong>环环相扣、内在统一</strong>，是紧密联系、相互贯通、相辅相成的统一整体，形成全过程人民民主的<strong>完整链条</strong>。</blockquote>
-<h4>全方位（p167）</h4>
-<blockquote>全过程人民民主<strong>贯通国家政治生活和社会生活各层面各维度</strong>。在中国这样一个<strong>人口数量巨大、社会结构复杂、利益诉求多元、发展任务艰巨</strong>的大国，只有广泛集中全体人民的智慧和意志，才能切实保障和实现<strong>社会利益的最大化</strong>。</blockquote>
-<p>制度支撑：我国有<strong>全国、省级、设区的市级、县级、乡镇级五级人民代表大会</strong>（五级人大，填空题常考），各级人大代表都由民主选举产生、对人民负责、受人民监督。</p>
-<h4>全覆盖（p167）</h4>
-<blockquote>涵盖国家各项事业各项工作，贯穿&quot;<strong>五位一体</strong>&quot;总体布局和&quot;<strong>四个全面</strong>&quot;战略布局的方方面面，是各方面民主的<strong>有机统一</strong>。在国家政治生活和社会生活的各个领域、各个方面，都遵循民主的原则和方式，把反映人民意愿、体现人民意志作为<strong>决策、执行、监督的基本准则</strong>，使民主原则覆盖<strong>各类议题、各个领域、各个层级</strong>。</blockquote></div></details><details open><summary>5. 第三层：全过程人民民主是<strong>最广泛、最真实、最管用</strong>的民主（p168–169）</summary><div class="bd"><p><strong>总起</strong></p>
-<blockquote>评判一种民主形式好不好，<strong>实践最有说服力，人民最有发言权</strong>。全过程人民民主既能确保人民充分享有各方面权利，又能有效促进国家治理高效和社会和谐稳定，维护和保障人民群众的根本利益，是最广泛、最真实、最管用的民主。</blockquote>
-<h4>最广泛（p168）</h4>
-<blockquote>我国宪法规定，<strong>国家的一切权力属于人民</strong>。人民：<br>· 既充分享有<strong>民主选举</strong>权利，又充分享有<strong>民主协商、民主决策、民主管理、民主监督</strong>权利；<br>· 既参与<strong>国家事务</strong>管理，又参与<strong>经济和文化事业以及社会事务</strong>管理；<br>· 既参与<strong>国家发展顶层设计</strong>的意见建议征询，又参与<strong>地方公共事务</strong>治理；<br>· 既通过<strong>党委、人大、政府、政协、监察机关、司法机关</strong>等渠道表达意愿，又通过<strong>人民团体、企事业单位、基层群众性自治组织、社会组织</strong>等渠道表达诉求。<br>因此，全过程人民民主是<strong>全体人民共同持续参与，各个民族共同平等享有，不同地域、不同领域、不同层级、不同群体均实现全面覆盖</strong>的民主体系，是最广泛的民主。</blockquote>
-<p>四个&quot;既…又…&quot;＋五个&quot;不同&quot;，是&quot;最广泛&quot;的全部论据。</p>
-<h4>最真实（p168–169）</h4>
-<blockquote>全过程人民民主把<strong>党的主张、国家意志、人民意愿</strong>紧密融合在一起，充分彰显了<strong>人民的主体地位</strong>。它真实反映人民的期盼、希望和诉求，从国家大政方针和社会治理，到百姓的<strong>收入、就业、医疗、教育、养老、住房</strong>等，都有地方说、说了有人听、听了有反馈，都能落实到党和政府的施政措施中。人民的意愿和呼声，经过民主决策程序成为党和国家的方针政策，进而通过政权体系顺利转化为实现人民意愿的具体实践，能够确保人民<strong>真正当家作主</strong>。<strong>人民的事人民管，人民的事人民办</strong>。人民的<strong>获得感、幸福感、安全感</strong>不断提升，<strong>生存权、发展权、健康权</strong>得到充分保障。</blockquote>
-<h4>最管用（p169）</h4>
-<blockquote>习近平指出：&quot;<strong>民主不是装饰品，不是用来做摆设的，而是要用来解决人民要解决的问题的。</strong>&quot;</blockquote>
-<p>全过程人民民主体现了社会主义民主的优势，<strong>六个&quot;防止&quot;</strong>：</p>
-<div class="tw"><table><thead><tr><th>保证 / 加强</th><th>切实防止</th></tr></thead><tbody><tr><td>在党的领导下有效治理国家</td><td>群龙无首、一盘散沙</td></tr><tr><td>人民依法行使权利</td><td>选举时漫天许诺、选举后无人过问</td></tr><tr><td>社会各种力量合作协调</td><td>党争纷沓、相互倾轧</td></tr><tr><td>平等团结互助和谐的社会主义民族关系</td><td>民族隔阂、民族冲突</td></tr><tr><td>发展基层民主</td><td>人民形式上有权、实际上无权</td></tr><tr><td>形成治国理政的强大合力</td><td>相互掣肘、内耗严重</td></tr></tbody></table></div>
-<blockquote>因此，全过程人民民主具有<strong>显著的实践优越性</strong>，是最管用的民主。</blockquote></div></details><details open><summary>6. 附录：书上引用的那张方框（p167–168）</summary><div class="bd"><blockquote>&quot;一个国家民主不民主，关键在于是不是真正做到了人民当家作主，<strong>要看人民有没有投票权，更要看人民有没有广泛参与权</strong>；<strong>要看人民在选举过程中得到了什么口头许诺，更要看选举后这些承诺实现了多少</strong>；<strong>要看制度和法律规定了什么样的政治程序和政治规则，更要看这些制度和法律是不是真正得到了执行</strong>；<strong>要看权力运行规则和程序是否民主，更要看权力是否真正受到人民监督和制约</strong>。&quot;<br>——习近平在中央人大工作会议上的讲话（2021 年 10 月 13 日）</blockquote>
-<p>四个&quot;要看……更要看……&quot;，材料分析题直接引用，非常好用。</p></div></details><details open><summary>7. 可能怎么考</summary><div class="bd"><ol><li><strong>简述</strong>（本题）：为什么说全过程人民民主是社会主义民主政治的本质属性？→ 本质属性＋三最＋四统一＋三全</li><li><strong>论述</strong>：如何理解全过程人民民主是&quot;全链条、全方位、全覆盖&quot;的民主？</li><li><strong>简答</strong>：全过程人民民主&quot;四个统一&quot;是什么？</li><li><strong>辨析</strong>：&quot;全过程人民民主就是让人民在选举中充分投票。&quot;→ 错，只讲了选举环节，忽略了协商、决策、管理、监督的全链条</li><li><strong>材料题</strong>：给出&quot;民主不是装饰品&quot;或&quot;四个要看更要看&quot;，问体现了什么</li><li><strong>填空</strong>：五级人民代表大会；五位一体；四个全面；六个&quot;防止&quot;</li></ol></div></details><details open><summary>8. 背诵顺序（15 分钟）</summary><div class="bd"><ol><li>先记八个字：<strong>本质属性 · 三最</strong></li><li>再记口诀：<strong>四统一 → 三全 → 三最</strong>（对应书上三个&quot;目&quot;）</li><li>四统一只背四个词对；三全只背三个词＋五环节；三最只背标题句</li><li>时间不够时，<strong>四统一和三最优先</strong>，三全可以只留一句&quot;全链条、全方位、全覆盖&quot;</li></ol></div></details></div></article><article class="card" id="k05"><div class="card-head"><span class="badge">05</span><div><h2>人类命运共同体</h2><p class="meta">第十六章 · 中国特色大国外交 · p329–330</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>简述人类命运共同体的丰富内涵。</span></div><div class="alt">备选问法：如何推动构建人类命运共同体？</div><div class="tpl"><b>结 构</b><ol><li>一句定义。</li><li>五个世界（领域＋做法）。</li><li>两个“没有”收尾。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>人类命运共同体，就是每个民族、每个国家的前途命运都紧紧联系在一起，应该风雨同舟、荣辱与共。构建人类命运共同体，就是要携手世界各国人民共同建设持久和平、普遍安全、共同繁荣、开放包容、清洁美丽的世界。</p><p>政治上，坚持对话协商，建设持久和平的世界，坚持大国小国一律平等，构建对话不对抗、结伴不结盟的伙伴关系。</p><p>安全上，坚持共建共享，建设普遍安全的世界，树立共同、综合、合作、可持续的安全观。</p><p>经济上，坚持合作共赢，建设共同繁荣的世界，坚持你好我好大家好，推进开放、包容、普惠、平衡、共赢的经济全球化。</p><p>文化上，坚持交流互鉴，建设开放包容的世界，要对话不要对立，要交流不要取代，要包容不要冲突。</p><p>生态上，坚持绿色低碳，建设清洁美丽的世界，共建地球生命共同体。</p><p>没有哪个国家能够独自应对人类面临的各种挑战，也没有哪个国家能够退回到自我封闭的孤岛。</p><span class="cnt">约 361 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：<strong>第十六章 中国特色大国外交和推动构建人类命运共同体</strong>（p329–330）<br>照片：`照片/p329.jpg`、`照片/p330.jpg`<br>老师标记：正文里 ①–⑤ 逐条圈号、逐条画线；书上还贴了一张黄色便签，手写&quot;五个世界&quot;的领域对照表</div><details open><summary>0. 一句话答案（先背这句）</summary><div class="bd"><blockquote>构建人类命运共同体，就是要携手世界各国人民共同建设<strong>持久和平、普遍安全、共同繁荣、开放包容、清洁美丽</strong>的世界。</blockquote>
-<p>这五个词是&quot;丰富内涵&quot;的全部骨架，多一个字少一个字都要丢分。</p></div></details><details open><summary>1. 定义（p329，答题的开头段）</summary><div class="bd"><blockquote>人类命运共同体，顾名思义，就是每个民族、每个国家的前途命运都<strong>紧紧联系在一起</strong>，应该<strong>风雨同舟、荣辱与共</strong>，努力把我们生于斯、长于斯的这个星球建成一个<strong>和睦的大家庭</strong>，把世界各国人民对美好生活的向往变成现实。</blockquote></div></details><details open><summary>2. 五个世界（核心，①—⑤）</summary><div class="bd"><div class="tw"><table><thead><tr><th>领域</th><th>建设什么样的世界</th><th>怎么做（原文要点）</th></tr></thead><tbody><tr><td><strong>政治</strong></td><td><strong>持久和平</strong></td><td>坚持国家之间的<strong>对话协商</strong>；<strong>大国小国一律平等</strong>；构建<strong>对话不对抗、结伴不结盟</strong>的伙伴关系；尊重彼此核心利益和重大关切，管控矛盾分歧；努力形成<strong>相互尊重、公平正义、合作共赢</strong>的新型国际关系</td></tr><tr><td><strong>安全</strong></td><td><strong>普遍安全</strong></td><td>树立<strong>共同、综合、合作、可持续</strong>的安全观；统筹应对<strong>传统和非传统</strong>安全威胁；反对一切形式的恐怖主义；营造<strong>公道正义、共建共享</strong>的安全格局</td></tr><tr><td><strong>经济</strong></td><td><strong>共同繁荣</strong></td><td>坚持<strong>你好我好大家好</strong>的理念；推进<strong>开放、包容、普惠、平衡、共赢</strong>的经济全球化；创造全人类共同发展的良好条件；让发展成果惠及世界各国</td></tr><tr><td><strong>文化</strong></td><td><strong>开放包容</strong></td><td>坚持<strong>交流互鉴</strong>；促进<strong>和而不同、兼收并蓄</strong>的文明交流；<strong>要对话不要对立，要交流不要取代，要包容不要冲突</strong>；推动人类文明实现创造性发展</td></tr><tr><td><strong>生态</strong></td><td><strong>清洁美丽</strong></td><td>倡导<strong>绿色、低碳、循环、可持续</strong>的生产生活方式；采取行动应对<strong>气候变化</strong>；构筑<strong>尊崇自然、绿色发展</strong>的生态体系；促进人与自然和谐共生，<strong>共建地球生命共同体</strong></td></tr></tbody></table></div>
-<p><strong>顺序陷阱</strong> ⚠️</p>
-<ul><li>书上的顺序是：和平（政治）→ 安全 → 繁荣（经济）→ 包容（文化）→ 美丽（生态）</li><li>便签按 <strong>政治 → 经济 → 安全 → 文化 → 生态</strong> 排，把&quot;经济&quot;提到了&quot;安全&quot;前面</li><li><strong>默写按书</strong>：持久和平 → 普遍安全 → 共同繁荣 → 开放包容 → 清洁美丽</li></ul>
-<p><strong>五个词的内在逻辑</strong>：先有和平（前提）→ 才有安全（保障）→ 才能繁荣（基础）→ 需要包容（文明条件）→ 落到美丽（生态底色）。从&quot;不打仗&quot;讲到&quot;过得好&quot;，最后讲到&quot;活得久&quot;。</p></div></details><details open><summary>3. 为什么必须构建（理论依据，写一段提分）</summary><div class="bd"><p><strong>（1）马克思主义的&quot;世界历史&quot;思想</strong></p>
-<blockquote>马克思、恩格斯指出：&quot;各民族的原始封闭状态由于日益完善的生产方式、交往以及因交往而自然形成的不同民族之间的分工消灭得越是彻底，历史也就越是成为世界历史。&quot;</blockquote>
-<p><strong>（2）现实的相互依存</strong></p>
-<blockquote>无论近邻还是远交，无论大国还是小国，无论发达国家还是发展中国家，正日益形成<strong>利益交融、安危与共</strong>的利益共同体和命运共同体。人类交往的世界性比过去任何时候都更深入、更广泛，各国相互联系和彼此依存比过去任何时候都更频繁、更紧密。</blockquote>
-<p><strong>（3）两个&quot;没有&quot;（最常引用的收束句）</strong></p>
-<blockquote><strong>没有哪个国家能够独自应对人类面临的各种挑战，也没有哪个国家能够退回到自我封闭的孤岛。</strong></blockquote></div></details><details open><summary>4. 书上那张方框（p330，材料题备料）</summary><div class="bd"><blockquote>&quot;事要去做才能成就事业，路要去走才能开辟通途。构建人类命运共同体是一个<strong>历史过程</strong>，不可能<strong>一蹴而就</strong>，也不可能<strong>一帆风顺</strong>，需要付出<strong>长期艰苦的努力</strong>。为了构建人类命运共同体，我们应该<strong>锲而不舍、驰而不息</strong>进行努力，不能因现实复杂……&quot;</blockquote>
-<p>这段话专治辨析题：&quot;构建人类命运共同体是可以一蹴而就的&quot; → 错。</p></div></details><details open><summary>5. 可能怎么考</summary><div class="bd"><ol><li><strong>简述</strong>（本题）：人类命运共同体的丰富内涵是什么？→ 一句话总述 + 五个世界 + 各自要点</li><li><strong>简答</strong>：如何推动构建人类命运共同体？→ 五个&quot;建设……的世界&quot;</li><li><strong>材料题</strong>：给气候、疫情、贸易摩擦等材料，问对应哪一个&quot;世界&quot;、该怎么应对</li><li><strong>辨析</strong>：人类命运共同体就是经济合作 → 错，是政治、安全、经济、文化、生态&quot;五位一体&quot;的总体布局</li><li><strong>填空</strong>：共同、综合、合作、可持续的<strong>安全观</strong>；开放、包容、普惠、平衡、共赢的<strong>经济全球化</strong></li></ol></div></details><details open><summary>6. 背诵（10 分钟）</summary><div class="bd"><ol><li>先背五个词：<strong>和平—安全—繁荣—包容—美丽</strong></li><li>再配五个动词：<strong>对话协商—共建共享—合作共赢—交流互鉴—绿色低碳</strong></li><li>每个领域留一个&quot;钩子&quot;：</li></ol>
-<ul><li>政治 → &quot;大国小国一律平等&quot;＋&quot;对话不对抗、结伴不结盟&quot;</li><li>安全 → &quot;共同、综合、合作、可持续&quot;</li><li>经济 → &quot;你好我好大家好&quot;</li><li>文化 → 三个&quot;要……不要……&quot;</li><li>生态 → &quot;共建地球生命共同体&quot;</li></ul>
-<ol start="4"><li>最后补开头定义句和结尾&quot;两个没有&quot;</li></ol></div></details></div></article><article class="card" id="k06"><div class="card-head"><span class="badge">06</span><div><h2>绿水青山就是金山银山</h2><p class="meta">第十二章 · 建设社会主义生态文明 · p244–245</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>如何理解“绿水青山就是金山银山”？</span></div><div class="alt">备选问法：为什么说保护生态环境就是保护生产力？</div><div class="tpl"><b>结 构</b><ol><li>定位一句。</li><li>关系：辩证统一＋两个成语＋三层递进。</li><li>价值：四种财富。</li><li>落实：关键在人。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>生态环境问题归根到底是经济发展方式和生活方式问题。绿水青山就是金山银山，是重要的发展理念，也是推进现代化建设的重大原则。</p><p>它阐明了发展与保护的关系：保护生态环境就是保护生产力，改善生态环境就是发展生产力。二者辩证统一、相辅相成，发展经济不能竭泽而渔，保护生态也不能缘木求鱼，要坚持在发展中保护、在保护中发展。</p><p>既要绿水青山，也要金山银山；宁要绿水青山，不要金山银山；而且绿水青山就是金山银山。绿水青山既是自然财富、生态财富，又是社会财富、经济财富，它可以带来金山银山，但金山银山买不到绿水青山。</p><p>处理好二者关系，关键在人、关键在思路。要处理好高质量发展和高水平保护的关系，构建绿色低碳循环经济体系，实现经济效益、社会效益、生态效益同步提升。</p><p>人不负青山，青山定不负人。</p><span class="cnt">约 330 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：<strong>第十二章 建设社会主义生态文明 → 第一节 坚持人与自然和谐共生 → 二、绿水青山就是金山银山</strong>（p244–245）<br>照片：`照片/p244.jpg`、`照片/p245.jpg`<br>老师标记：「二、」画大圈；正文里手加 ①②③④ 把这段分成四层；&quot;重大原则&quot;&quot;辩证统一&quot;&quot;竭泽而渔&quot;&quot;缘木求鱼&quot;&quot;买不到&quot;&quot;关键在人，关键在思路&quot;逐一圈画</div><details open><summary>0. 老师给的答题骨架（这题的结构已经替你分好了）</summary><div class="bd"><p>书上这段原本是连续的行文，老师在四个位置手加了 <strong>①②③④</strong>，就是四层递进：</p>
-<div class="tw"><table><thead><tr><th>层</th><th>讲什么</th><th>一句话</th></tr></thead><tbody><tr><td><strong>①</strong></td><td>是什么、多重要</td><td>重要的发展理念、推进现代化建设的<strong>重大原则</strong></td></tr><tr><td><strong>②</strong></td><td>二者什么关系</td><td><strong>辩证统一、相辅相成</strong>，不是鱼和熊掌</td></tr><tr><td><strong>③</strong></td><td>为什么&quot;就是&quot;</td><td>绿水青山本身<strong>就是财富</strong>，且金山银山<strong>买不到</strong>它</td></tr><tr><td><strong>④</strong></td><td>怎么做</td><td><strong>关键在人，关键在思路</strong></td></tr></tbody></table></div>
-<p>答题就按这四层写，每层一句原文＋一句自己的话，稳。</p></div></details><details open><summary>1. 第①层：定位（p244）</summary><div class="bd"><blockquote>生态环境问题<strong>归根到底是经济发展方式和生活方式问题</strong>。绿水青山就是金山银山，这是<strong>重要的发展理念</strong>，也是推进现代化建设的<strong>重大原则</strong>。</blockquote>
-<p>这一理念干成了三件事（原文三个动词，最好原文背）：</p>
-<ul><li><strong>阐明了</strong>经济发展与生态环境保护之间的关系</li><li><strong>揭示了</strong>保护生态环境就是<strong>保护生产力</strong>、改善生态环境就是<strong>发展生产力</strong>的道理</li><li><strong>指明了</strong>实现<strong>发展和保护协同共生</strong>的新路径</li></ul>
-<blockquote>⚠️ 最有分量的半句是&quot;<strong>保护生态环境就是保护生产力，改善生态环境就是发展生产力</strong>&quot;——把生态放进生产力范畴，这是这一理念的理论创新点，也是阅卷的给分点。</blockquote></div></details><details open><summary>2. 第②层：辩证关系（p244）</summary><div class="bd"><p><strong>先立靶子</strong>：表面上看，生态环境保护和经济②发展是<strong>矛盾对立</strong>的关系，是<strong>鱼和熊掌不可兼得</strong>的两难选择。</p>
-<p><strong>再破靶子</strong>：但从根本上讲，二者是<strong>辩证统一、相辅相成</strong>的关系。</p>
-<p><strong>两个成语一个都不能少</strong>：</p>
-<blockquote>发展经济不能对资源和生态环境<strong>竭泽而渔</strong>，生态环境保护也不是舍弃经济发展而<strong>缘木求鱼</strong>，而是要坚持<strong>在发展中保护、在保护中发展</strong>。</blockquote>
-<blockquote>习近平指出：&quot;我们<strong>既要</strong>绿水青山，<strong>也要</strong>金山银山。<strong>宁要</strong>绿水青山，<strong>不要</strong>金山银山，<strong>而且</strong>绿水青山<strong>就是</strong>金山银山。&quot;</blockquote>
-<p>这三句是递进关系，不是三个并列的说法：先要&quot;两个都要&quot;，再讲&quot;宁可要生态&quot;，最后落到&quot;生态本身就是财富&quot;。答题时写全三句，能直接体现理解深度。</p>
-<p><strong>收束</strong>：经济发展不能以破坏生态为代价，不能把生态环境保护和经济发展<strong>割裂</strong>开来，更不能<strong>对立</strong>起来。</p>
-<blockquote>发展是硬道理，但绝不能不考虑或者很少考虑环境的<strong>承载能力</strong>，绝不能一味<strong>索取资源</strong>。</blockquote></div></details><details open><summary>3. 第③层：为什么&quot;就是&quot;（p244–245）</summary><div class="bd"><p>这一层回答的是本题的关键疑问——凭什么叫&quot;就是&quot;？因为青山绿水的<strong>本身就有价值</strong>：</p>
-<blockquote>绿水青山<strong>既是自然财富、生态财富，又是社会财富、经济财富</strong>。</blockquote>
-<p>四个&quot;财富&quot;是这层的核心句（自然、生态、社会、经济）。</p>
-<ul><li><strong>古语支撑</strong>：&quot;草木植成，国之富也。&quot;</li><li><strong>本钱论</strong>：巍巍高山、茫茫草原、茂密森林、碧海蓝天、洁净沙滩、湖泊湿地、冰天雪地，都是大自然的慷慨馈赠，也是人类<strong>永续发展的最大本钱</strong></li><li><strong>不可逆论</strong>：绿水青山<strong>可带来</strong>金山银山，但金山银山却<strong>买不到</strong>绿水青山</li><li><strong>美感与健康</strong>：山峦层林尽染，平原蓝绿交融，城乡鸟语花香；生态优势是<strong>金子换不来的</strong>；绿水青山是人民群众<strong>健康的重要保障</strong>，是<strong>共有财富</strong></li><li><strong>反证</strong>：挣到了钱，但空气、饮用水都不合格，<strong>哪有什么幸福可言</strong></li><li><strong>转化路径</strong>：坚持<strong>生态优先、绿色发展</strong>，把生态环境优势转化为<strong>生态农业、生态工业、生态旅游</strong>等生态经济优势，绿水青山就变成了金山银山</li></ul></div></details><details open><summary>4. 第④层：怎么做（p245）</summary><div class="bd"><blockquote>处理好绿水青山和金山银山的关系，<strong>关键在人，关键在思路</strong>。</blockquote>
-<blockquote>让绿水青山充分发挥经济社会效益，<strong>不是要把它破坏了，而是要把它保护得更好</strong>。</blockquote>
-<p><strong>四组要点</strong>：</p>
-<ol><li><strong>发展阶段变了</strong>：我国经济已由<strong>高速增长阶段</strong>转向<strong>高质量发展阶段</strong>，生态环境的<strong>支撑作用</strong>越来越明显</li><li><strong>处理好两对关系</strong>：<strong>高质量发展</strong>和<strong>高水平保护</strong>；通过高水平环境保护，塑造发展的<strong>新动能、新优势</strong>，构建<strong>绿色低碳循环经济体系</strong>，降低发展的<strong>资源环境代价</strong>，增强发展的<strong>潜力和后劲</strong></li><li><strong>纠三种错误做法</strong>：</li></ol>
-<ul><li>扭转&quot;只要经济增长不顾其他各项事业发展&quot;的思路</li><li>扭转&quot;为了经济增长数字不顾一切、不计后果&quot;的做法</li><li>不能因为发展遇到困难就动&quot;铺摊子上项目、以牺牲环境换取经济增长&quot;的念头，甚至<strong>突破生态保护红线</strong></li></ul>
-<ol start="4"><li><strong>正面的样子</strong>：坚持正确的发展理念，产业和生态完全可以<strong>相得益彰、和平共处</strong>，实现<strong>经济效益、社会效益、生态效益同步提升</strong></li></ol>
-<blockquote>一句话记忆：&quot;<strong>保护生态，生态就会回馈你。</strong>&quot;</blockquote></div></details><details open><summary>5. 书上那张方框（p245，习近平 2022 年新年贺词）</summary><div class="bd"><blockquote>无论是黄河长江&quot;母亲河&quot;，还是碧波荡漾的青海湖、逶迤磅礴的雅鲁藏布江；无论是南水北调的世纪工程，还是塞罕坝林场的&quot;绿色地图&quot;；无论是云南大象北上南归，还是藏羚羊繁衍迁徙……这些都昭示着，<strong>人不负青山，青山定不负人</strong>。</blockquote>
-<p>材料题要举例时，这六个例子直接拿来用；结尾用&quot;人不负青山，青山定不负人&quot;收，比&quot;由此可见&quot;高级。</p></div></details><details open><summary>6. 可能的问法与答法</summary><div class="bd"><ol><li><strong>论述</strong>（本题）：如何理解绿水青山就是金山银山？→ 四层：定位 → 辩证统一 → 四种财富/买不到 → 关键在人关键在思路</li><li><strong>简答</strong>：为什么说保护生态环境就是保护生产力？→ 从生产力三要素讲，生态是劳动对象和劳动资料</li><li><strong>辨析</strong>：&quot;绿水青山和金山银山是鱼和熊掌不可兼得&quot; → 错，表面矛盾、根本统一，要坚持在发展中保护、在保护中发展</li><li><strong>材料题</strong>：给一个&quot;先污染后治理&quot;的地方案例 → 用&quot;竭泽而渔&quot;&quot;缘木求鱼&quot;&quot;突破生态保护红线&quot;&quot;三效益同步提升&quot;作答</li></ol></div></details><details open><summary>7. 背诵（12 分钟）</summary><div class="bd"><ol><li>先记四层：<strong>理念原则 → 辩证统一 → 四种财富 → 关键在人</strong></li><li>背三句递进：<strong>既要…也要… / 宁要…不要… / 而且…就是…</strong></li><li>背两个成语：<strong>竭泽而渔、缘木求鱼</strong>（一个管&quot;过度索取&quot;，一个管&quot;为环保放弃发展&quot;）</li><li>背两个金句：<strong>保护生态环境就是保护生产力</strong>；<strong>人不负青山，青山定不负人</strong></li><li>四个&quot;财富&quot;和三个&quot;效益&quot;容易混：财富是&quot;自然、生态、社会、经济&quot;，效益是&quot;经济、社会、生态&quot;</li></ol></div></details></div></article><article class="card" id="k07"><div class="card-head"><span class="badge">07</span><div><h2>社会主义核心价值观</h2><p class="meta">第九章 · 建设社会主义文化强国 · p212–213</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>阐述社会主义核心价值观的基本内容。</span></div><div class="alt">备选问法：如何培育和践行社会主义核心价值观？</div><div class="tpl"><b>结 构</b><ol><li>24 字三层。</li><li>三个来源、三个作用。</li><li>三强化、三融入。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>以富强、民主、文明、和谐，自由、平等、公正、法治，爱国、敬业、诚信、友善为基本内容的社会主义核心价值观，把涉及国家、社会、公民的价值要求融为一体，回答了我们要建设什么样的国家、建设什么样的社会、培育什么样的公民的重大问题。</p><p>其中国家层面是富强、民主、文明、和谐，社会层面是自由、平等、公正、法治，公民层面是爱国、敬业、诚信、友善。</p><p>它既体现了社会主义本质要求，继承了中华优秀传统文化，也吸收了世界文明有益成果，体现了时代精神，对于巩固社会主义制度、推进国家繁荣发展、维系社会和谐稳定具有重要作用。</p><p>培育和践行，要强化教育引导、实践养成、制度保障，融入法治建设、融入社会发展、融入日常生活，使之像空气一样无所不在、无时不有，成为百姓日用而不觉的行为准则。</p><span class="cnt">约 323 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：<strong>第九章 建设社会主义文化强国 → 第三节 以社会主义核心价值观引领文化建设</strong>（p212–213）<br>照片：`照片/p212.jpg`（已旋转校正）、`照片/p213.jpg`<br>老师标记：p213 段首画圈；整段&quot;24 字＋回答三个问题&quot;重下划线；页边手写&quot;…分析 国家、社会、层面&quot;</div><details open><summary>0. 答题骨架（五个层次，按顺序写就不会漏）</summary><div class="bd"><div class="tw"><table><thead><tr><th>层</th><th>内容</th></tr></thead><tbody><tr><td>1</td><td><strong>24 个字</strong>：三个层面各四个词</td></tr><tr><td>2</td><td><strong>回答三个问题</strong>：建设什么样的国家 / 什么样的社会 / 培育什么样的公民</td></tr><tr><td>3</td><td><strong>三个来源</strong>：社会主义本质要求、中华优秀传统文化、世界文明有益成果（＋时代精神）</td></tr><tr><td>4</td><td><strong>三个作用</strong>：巩固制度、推进繁荣、维系稳定</td></tr><tr><td>5</td><td><strong>怎么践行</strong>：三强化＋三融入＋&quot;像空气一样&quot;</td></tr></tbody></table></div></div></details><details open><summary>1. 二十四个字（第一层，错一个字都不行）</summary><div class="bd"><div class="tw"><table><thead><tr><th>层面</th><th>四个词</th></tr></thead><tbody><tr><td><strong>国家</strong></td><td><strong>富强、民主、文明、和谐</strong></td></tr><tr><td><strong>社会</strong></td><td><strong>自由、平等、公正、法治</strong></td></tr><tr><td><strong>公民</strong></td><td><strong>爱国、敬业、诚信、友善</strong></td></tr></tbody></table></div>
-<p><strong>原文（p212–213 跨页的一句，背整句）</strong></p>
-<blockquote>以富强、民主、文明、和谐，自由、平等、公正、法治，爱国、敬业、诚信、友善为基本内容的社会主义核心价值观，把涉及<strong>国家、社会、公民</strong>的价值要求<strong>融为一体</strong>，回答了我们要<strong>建设什么样的国家、建设什么样的社会、培育什么样的公民</strong>的重大问题。</blockquote>
-<p>⚠️ 第三层书上写的是&quot;<strong>公民</strong>&quot;，不是&quot;个人&quot;。原文后面也是&quot;培育什么样的<strong>公民</strong>&quot;。这两个字是阅卷的敏感点。</p>
-<p>⚠️ 顺序不能乱：国家在前、社会在中、公民在后；每一层内部也按&quot;富强民主文明和谐&quot;的原序。</p></div></details><details open><summary>2. 定位：为什么它是&quot;核心&quot;（p212）</summary><div class="bd"><blockquote>社会主义核心价值观是一个民族<strong>赖以维系的精神纽带</strong>，是一个国家<strong>共同的思想道德基础</strong>。</blockquote>
-<blockquote>习近平指出：&quot;如果<strong>没有共同的核心价值观</strong>，一个民族、一个国家就会<strong>魂无定所、行无依归</strong>。&quot;</blockquote>
-<p>&quot;魂无定所、行无依归&quot;这八个字是这题最好用的引文，答题开头放一句，立刻有分量。</p></div></details><details open><summary>3. 三个来源（第三层，最容易答不全）</summary><div class="bd"><blockquote>社会主义核心价值观<strong>既体现了社会主义本质要求</strong>，<strong>继承了中华优秀传统文化</strong>，<strong>也吸收了世界文明有益成果</strong>，<strong>体现了时代精神</strong>。</blockquote>
-<p>四个短句、三个来源＋一个时代烙印，缺任何一个都算不完整：</p>
-<ul><li>社会主义<strong>本质要求</strong> → 姓&quot;社&quot;</li><li>中华优秀<strong>传统文化</strong> → 有根</li><li>世界文明<strong>有益成果</strong> → 开放</li><li><strong>时代精神</strong> → 当下</li></ul></div></details><details open><summary>4. 三个作用（第四层）</summary><div class="bd"><blockquote>对于<strong>巩固社会主义制度</strong>、<strong>推进国家繁荣发展</strong>、<strong>维系社会和谐稳定</strong>具有重要作用。</blockquote>
-<p>三个动词分别是&quot;巩固—推进—维系&quot;，配&quot;制度—发展—稳定&quot;，可以按这个对应关系记。</p></div></details><details open><summary>5. 怎么践行（p213，论述题给分密集区）</summary><div class="bd"><p><strong>前提句（内化外化）</strong></p>
-<blockquote>社会主义核心价值观<strong>只有成为广泛的社会共识</strong>，<strong>内化为人们的精神追求</strong>，<strong>外化为人们的自觉行动</strong>，才能真正在社会生活中发挥作用。</blockquote>
-<p><strong>三个强化</strong></p>
-<blockquote>要强化<strong>教育引导、实践养成、制度保障</strong>。</blockquote>
-<p><strong>三个融入</strong></p>
-<blockquote>把社会主义核心价值观<strong>融入法治建设、融入社会发展、融入日常生活</strong>。</blockquote>
-<p><strong>效果（金句）</strong></p>
-<blockquote>使社会主义核心价值观的影响<strong>像空气一样无所不在、无时不有</strong>，成为<strong>百姓日用而不觉</strong>的行为准则。</blockquote>
-<p><strong>传播渠道</strong></p>
-<blockquote>贯穿到<strong>日常形势宣传、成就宣传、主题宣传、典型宣传、热点引导和舆论监督</strong>中。</blockquote>
-<p><strong>产品载体</strong></p>
-<blockquote>发挥<strong>精神文化产品育人化人</strong>的重要功能，运用各类文化形式，生动具体地表现社会主义核心价值观。</blockquote></div></details><details open><summary>6. 相关的&quot;培育和践行&quot;表述（p212）</summary><div class="bd"><blockquote>要培育和践行社会主义核心价值观，弘扬以<strong>伟大建党精神</strong>为源头的<strong>中国共产党人精神谱系</strong>，提高全社会<strong>文明程度</strong>，推动社会主义核心价值观融入<strong>经济社会发展</strong>、融入人们<strong>生产生活方方面面</strong>，更好构筑<strong>中国精神、中国价值、中国力量</strong>。</blockquote>
-<p>&quot;三个中国&quot;（精神、价值、力量）可以做结尾升华。</p></div></details><details open><summary>7. 可能怎么考</summary><div class="bd"><ol><li><strong>简答/论述</strong>（本题）：社会主义核心价值观的内容是什么？如何理解？→ 24 字＋三个层面＋三个问题＋三个来源＋三个作用</li><li><strong>材料题</strong>：给某地&quot;核心价值观进社区/进课堂&quot;的做法 → 用三强化、三融入、&quot;像空气一样&quot;作答</li><li><strong>辨析</strong>：&quot;社会主义核心价值观只是对公民个人的道德要求&quot; → 错，国家、社会、公民三位一体</li><li><strong>简答</strong>：如何培育和践行社会主义核心价值观？→ 内化外化＋三强化＋三融入＋宣传＋文化产品</li><li><strong>填空</strong>：精神纽带、思想道德基础；魂无定所、行无依归；日用而不觉</li></ol></div></details><details open><summary>8. 背诵（10 分钟）</summary><div class="bd"><ol><li>十二个词按&quot;国—社—公&quot;三层背，每层四个</li><li>三个问题：&quot;什么样的国家 / 什么样的社会 / 什么样的公民&quot;</li><li>三个来源：&quot;本质要求 / 传统文化 / 世界文明＋时代精神&quot;</li><li>三个作用：&quot;制度 / 发展 / 稳定&quot;</li><li>三融入：&quot;法治 / 社会 / 生活&quot;；三强化：&quot;教育 / 实践 / 制度&quot;</li><li>金句收尾：&quot;像空气一样&quot;&quot;日用而不觉&quot;&quot;魂无定所、行无依归&quot;</li></ol></div></details></div></article><article class="card" id="k08"><div class="card-head"><span class="badge">08</span><div><h2>四次伟大飞跃</h2><p class="meta">第二章 · 中国式现代化（第一节） · p36–37</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>党在百年奋斗历程中实现了哪四次伟大飞跃？</span></div><div class="alt">备选问法：结合四次飞跃，说明为什么历史和人民选择了中国共产党。</div><div class="tpl"><b>结 构</b><ol><li>总起一个主题。</li><li>四段并列（时间＋精神＋作为＋飞跃）。</li><li>补中国梦本质。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>一百年来，党团结带领人民进行的一切奋斗、一切牺牲、一切创造，归结起来就是一个主题：实现中华民族伟大复兴。</p><p>新民主主义革命时期，浴血奋战、百折不挠，推翻三座大山，建立中华人民共和国，实现了从几千年封建专制政治向人民民主的伟大飞跃，中国人民从此站起来了。</p><p>社会主义革命和建设时期，自力更生、发愤图强，建立社会主义制度，实现了一穷二白、人口众多的东方大国迈进社会主义社会的伟大飞跃。</p><p>改革开放新时期，解放思想、锐意进取，极大解放和发展社会生产力，推进了中华民族从站起来到富起来的伟大飞跃。</p><p>新时代，自信自强、守正创新，全面建成小康社会，中华民族迎来了从站起来、富起来到强起来的伟大飞跃。</p><p>中国梦的本质是国家富强、民族振兴、人民幸福。</p><span class="cnt">约 308 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：<strong>第二章 → 第一节 中华民族近代以来最伟大的梦想</strong>（p36–37，章号按页码推定）<br>照片：`照片/p36.jpg`、`照片/p37.jpg`（已旋转校正）<br>老师标记：四段逐段画线；页上手写了四个时间段 <strong>1921–1949 / 1949–1978 / 1978–2012 / 2012–</strong></div><details open><summary>1. 四次飞跃（背这张表）</summary><div class="bd"><div class="tw"><table><thead><tr><th>#</th><th>时期</th><th>时间（老师手写）</th><th>精神气质</th><th>干了什么</th><th>&quot;飞跃&quot;的固定表述</th></tr></thead><tbody><tr><td>①</td><td>新民主主义革命时期</td><td><strong>1921–1949</strong></td><td><strong>浴血奋战、百折不挠</strong></td><td>推翻帝国主义、封建主义、官僚资本主义<strong>三座大山</strong>，完成新民主主义革命，建立中华人民共和国</td><td>实现了中国从<strong>几千年封建专制政治向人民民主</strong>的伟大飞跃，<strong>中国人民从此站起来了</strong></td></tr><tr><td>②</td><td>社会主义革命和建设时期</td><td><strong>1949–1978</strong></td><td><strong>自力更生、发愤图强</strong></td><td>进行社会主义革命，建立社会主义制度，推进社会主义建设</td><td>实现了<strong>一穷二白、人口众多的东方大国迈进社会主义社会</strong>的伟大飞跃</td></tr><tr><td>③</td><td>改革开放和社会主义现代化建设新时期</td><td><strong>1978–2012</strong></td><td><strong>解放思想、锐意进取</strong></td><td>坚定不移推进改革开放，开创、坚持、捍卫、发展中国特色社会主义，极大解放和发展社会生产力</td><td>推进了<strong>中华民族从站起来到富起来</strong>的伟大飞跃</td></tr><tr><td>④</td><td>中国特色社会主义新时代</td><td><strong>2012–</strong></td><td><strong>自信自强、守正创新</strong></td><td>开创中国特色社会主义新时代，全面建成小康社会、迈上全面建设社会主义现代化国家新征程</td><td>中华民族迎来了<strong>从站起来、富起来到强起来</strong>的伟大飞跃</td></tr></tbody></table></div></div></details><details open><summary>2. 唯一的记忆主线：&quot;站—富—强&quot;是接龙</summary><div class="bd"><ul><li>第①次：站起来（表述里出现&quot;<strong>站起来了</strong>&quot;）</li><li>第③次：<strong>从站起来到富起来</strong>（只带一个前提）</li><li>第④次：<strong>从站起来、富起来到强起来</strong>（要带两个前提）</li></ul>
-<p>⚠️ 第④次是最容易写漏的：只写&quot;从富起来到强起来&quot;就错了，必须把&quot;<strong>站起来、富起来</strong>&quot;两个都带上。这是三次递进关系的语法标志，也是阅卷的第一个判分点。</p></div></details><details open><summary>3. 四个&quot;十六字精神气质&quot;（顺序不能互换）</summary><div class="bd"><div class="tw"><table><thead><tr><th>时期</th><th>精神气质</th></tr></thead><tbody><tr><td>新民主主义革命</td><td>浴血奋战、百折不挠</td></tr><tr><td>社会主义革命和建设</td><td>自力更生、发愤图强</td></tr><tr><td>改革开放新时期</td><td>解放思想、锐意进取</td></tr><tr><td>新时代</td><td>自信自强、守正创新</td></tr></tbody></table></div>
-<p>这四个词是四个时期的&quot;人格化标签&quot;，试卷上常做成匹配题或填空。</p></div></details><details open><summary>4. 前史：为什么会有这个&quot;伟大梦想&quot;（p36 第一段）</summary><div class="bd"><blockquote>中华民族是世界上最伟大的民族，创造了灿烂的中华文明，长期走在世界前列，为人类文明进步作出了不可磨灭的贡献。明朝后期开始实行<strong>闭关锁国</strong>政策，后来又错失<strong>工业革命、科技革命</strong>机遇，中国在内部矛盾和西方现代化浪潮冲击下逐渐走向衰落。<strong>鸦片战争</strong>后，由于西方列强的入侵和封建统治的腐朽，中国逐渐陷入<strong>半殖民地半封建社会</strong>的黑暗深渊，<strong>国家蒙辱、人民蒙难、文明蒙尘</strong>，中华民族遭受了前所未有的劫难。从那时起，<strong>实现中华民族伟大复兴，就成为中国人民和中华民族最伟大的梦想</strong>。</blockquote>
-<p>三个&quot;蒙&quot;（<strong>国家蒙辱、人民蒙难、文明蒙尘</strong>）是这段的标志性表述。</p></div></details><details open><summary>5. 总纲句（p36，必背）</summary><div class="bd"><blockquote>中国共产党自成立之日起，就肩负起实现<strong>中华民族伟大复兴</strong>的历史使命。</blockquote>
-<blockquote>习近平指出：&quot;一百年来，中国共产党团结带领中国人民进行的一切<strong>奋斗</strong>、一切<strong>牺牲</strong>、一切<strong>创造</strong>，归结起来就是一个<strong>主题</strong>：实现<strong>中华民族伟大复兴</strong>。&quot;</blockquote>
-<p>三个&quot;一切&quot;＋一个&quot;主题&quot;，是这一章的总纲。</p></div></details><details open><summary>6. 与&quot;中国梦&quot;的衔接（p37，常连考）</summary><div class="bd"><p><strong>本质</strong>：</p>
-<blockquote>实现中华民族伟大复兴的中国梦，本质是<strong>国家富强、民族振兴、人民幸福</strong>。</blockquote>
-<div class="tw"><table><thead><tr><th>维度</th><th>内涵</th></tr></thead><tbody><tr><td><strong>国家富强</strong></td><td>在全面建成小康社会基础上，全面建成<strong>富强民主文明和谐美丽</strong>的社会主义现代化强国</td></tr><tr><td><strong>民族振兴</strong></td><td>使中华民族更加坚强有力地<strong>自立于世界民族之林</strong>，为人类作出新的更大的贡献</td></tr><tr><td><strong>人民幸福</strong></td><td>坚持以<strong>人民为中心</strong>，增进人民福祉，促进人的<strong>全面发展</strong>，朝着<strong>共同富裕</strong>方向稳步前进</td></tr></tbody></table></div>
-<blockquote>中国梦把<strong>国家的追求、民族的向往、人民的期盼融为一体</strong>。</blockquote></div></details><details open><summary>7. 可能怎么考</summary><div class="bd"><ol><li><strong>简答</strong>（本题）：党在百年奋斗中实现了哪四次伟大飞跃？→ 四段＋四个时间＋四个精神气质＋四句&quot;飞跃&quot;</li><li><strong>论述</strong>：结合四次飞跃，说明为什么&quot;历史和人民选择了中国共产党&quot;</li><li><strong>填空</strong>：1921、1949、1978、2012 四个节点；三座大山；三个&quot;蒙&quot;</li><li><strong>匹配</strong>：四个精神气质 ↔ 四个时期</li><li><strong>简答</strong>：中国梦的本质是什么？→ 国家富强、民族振兴、人民幸福</li></ol></div></details><details open><summary>8. 背诵（12 分钟）</summary><div class="bd"><ol><li>先记时间轴四个点：<strong>1921 → 1949 → 1978 → 2012</strong></li><li>再记四组&quot;十六字&quot;：浴血奋战百折不挠 / 自力更生发愤图强 / 解放思想锐意进取 / 自信自强守正创新</li><li>再记四句&quot;飞跃&quot;，重点抠&quot;站—富—强&quot;的接龙</li><li>最后补开头（三个&quot;蒙&quot;）和结尾（中国梦本质三个词）</li></ol></div></details></div></article><article class="card" id="k09"><div class="card-head"><span class="badge">09</span><div><h2>政绩观与民生治理</h2><p class="meta">开放题 · 可能有材料 · 无照片</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>结合政绩观，谈谈推进新时代保障民生治理现代化的意义和作用。</span></div><div class="alt">备选问法：开放题，考场可能给材料。</div><div class="tpl"><b>结 构</b><ol><li>立意一句。</li><li>意义三层（政治／社会／治理）。</li><li>作用三条（定向／提质／长效）。</li><li>材料对接＋收尾。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>政绩观解决“为谁干”，治理现代化解决“怎么干”，民生是检验“干得怎么样”的标准。为民造福是最大政绩。</p><p>意义有三：政治上是政绩观的试金石，政绩为谁而树，看民生就知道；社会上是和谐之基，民生稳则社会稳；治理上是“最后一公里”，群众判断治理水平不看文件看窗口。</p><p>作用有三：一是定向，把考核指挥棒从看增速转向看获得感、幸福感、安全感；二是提质，坚持普惠性、基础性、兜底性，尽力而为、量力而行；三是长效，以“功成不必在我”的境界打基础、利长远，防止形象工程。</p><p>实践中要把“为民造福”从理念变成制度、从制度变成习惯，使每一项政绩都经得起实践、人民、历史的检验。</p><span class="cnt">约 271 字</span></div></div><div class="card-body"><div class="note">题型：开放题（可能有材料），一般 15–20 分<br>说明：这一题没有课本照片，答案按教材（第十章 民生与社会建设 ＋ 以人民为中心／党的建设中的政绩观）搭框架<br>用法：考场上材料只是&quot;证据&quot;，先立框架，再把材料往里塞</div><details open><summary>0. 先拆题干：三个关键词要各就各位</summary><div class="bd"><div class="tw"><table><thead><tr><th>关键词</th><th>在答案里的角色</th></tr></thead><tbody><tr><td><strong>政绩观</strong></td><td>&quot;为了谁、怎么干&quot;的<strong>思想开关</strong>——它决定方向</td></tr><tr><td><strong>保障民生</strong></td><td>治理的<strong>落脚点</strong>——群众看得见摸得着的事</td></tr><tr><td><strong>治理现代化</strong></td><td><strong>方法论</strong>——制度、效能、方式</td></tr></tbody></table></div>
-<p>一句话立意（开篇就用这句）：</p>
-<blockquote><strong>政绩观解决&quot;为谁干&quot;的问题，治理现代化解决&quot;怎么干&quot;的问题，民生是检验&quot;干得怎么样&quot;的唯一标准。三者贯通，统一于以人民为中心的发展思想。</strong></blockquote>
-<blockquote>加一句定调：&quot;为民造福是最大政绩。&quot;</blockquote></div></details><details open><summary>1. 意义：为什么这件事重要（三层递进）</summary><div class="bd"><h4>① 政治意义：政绩观的试金石</h4>
-<p>民生是政绩观最直接的检验场。<strong>政绩为谁而树</strong>，看民生就知道；<strong>树什么样的政绩</strong>，看民生项目就知道。</p>
-<ul><li>理论依据：为民造福是<strong>最大政绩</strong>；江山就是人民，人民就是江山</li><li>反面靶子：唯 GDP 论英雄、重&quot;显绩&quot;轻&quot;潜绩&quot;、搞&quot;<strong>形象工程</strong>&quot;&quot;<strong>政绩工程</strong>&quot;、&quot;新官不理旧账&quot;</li><li>结论：推进民生治理现代化，就是让政绩观从&quot;对上负责&quot;转向&quot;<strong>对上负责与对下负责相统一</strong>&quot;</li></ul>
-<h4>② 社会意义：民生的&quot;基础性&quot;地位</h4>
-<p>民生是<strong>人民幸福之基、社会和谐之本</strong>。民生稳，则社会稳；社会稳，则治理成本低。</p>
-<ul><li>民生&quot;七有&quot;：幼有所育、学有所教、劳有所得、病有所医、老有所养、住有所居、弱有所扶</li><li>就业是<strong>最基本的民生</strong></li><li>结论：民生治理现代化，是把&quot;维稳&quot;变成&quot;创稳&quot;的根本办法</li></ul>
-<h4>③ 治理意义：治理效能的&quot;最后一公里&quot;</h4>
-<p>国家治理体系和治理能力现代化的成效，最终要在基层、在民生窗口体现。群众判断治理水平，不看文件看窗口。</p>
-<ul><li>结论：民生领域是治理现代化的<strong>检验场和练兵场</strong>，也是制度优势转化为治理效能的<strong>最近通道</strong></li></ul></div></details><details open><summary>2. 作用：政绩观具体怎么&quot;发力&quot;（推荐用这三个，结构最稳）</summary><div class="bd"><h4>作用一：<strong>定向</strong>——把&quot;指挥棒&quot;从数字转向民生</h4>
-<ul><li>政绩考核从&quot;看增速&quot;转向&quot;看获得感、幸福感、安全感&quot;</li><li>把民生指标纳入干部考核（就业、教育、医疗、养老、住房、社会保障）</li><li>纠偏：不简单以国内生产总值增长率论英雄（可呼应第十二章&quot;绿水青山&quot;那题的同款表述）</li><li>关键词：<strong>指挥棒、风向标、价值引领</strong></li></ul>
-<h4>作用二：<strong>提质</strong>——让民生保障既&quot;尽力而为&quot;又&quot;量力而行&quot;</h4>
-<ul><li>坚持<strong>普惠性、基础性、兜底性</strong>民生建设</li><li>尽力而为、量力而行：既不吊高胃口，也不空头承诺</li><li>在<strong>发展中</strong>保障和改善民生，把&quot;蛋糕&quot;做大与分好结合</li><li>关键词：<strong>精准、可持续、可及性</strong></li></ul>
-<h4>作用三：<strong>长效</strong>——用&quot;功成不必在我&quot;治&quot;短期政绩&quot;</h4>
-<ul><li>政绩观上的&quot;<strong>功成不必在我</strong>&quot;的精神境界和&quot;<strong>功成必定有我</strong>&quot;的历史担当</li><li>打基础、利长远的事要多做：教育、社保、公共卫生这类&quot;慢变量&quot;</li><li>防三重短期行为：换一届改一版规划、重建设轻运维、重形象轻实效</li><li>关键词：<strong>潜绩、接力、制度连续性</strong></li></ul>
-<blockquote>若材料偏向&quot;数字化治理/一网通办/网格化&quot;，把&quot;作用二&quot;换成&quot;<strong>增效</strong>&quot;：系统治理、依法治理、综合治理、源头治理；共建共治共享；数据多跑路、群众少跑腿。</blockquote></div></details><details open><summary>3. 材料怎么接（三种常见材料，一一对应）</summary><div class="bd"><div class="tw"><table><thead><tr><th>材料长什么样</th><th>说明什么</th><th>怎么接</th></tr></thead><tbody><tr><td>某地大拆大建、豪华办公楼、&quot;盆景&quot;项目</td><td>政绩观错位、形式主义</td><td>反面论证&quot;政绩为谁而树&quot;，引出&quot;为民造福是最大政绩&quot;</td></tr><tr><td>老旧小区改造、15 分钟生活圈、长者食堂</td><td>普惠性、基础性、兜底性</td><td>正面论证&quot;民生治理现代化&quot;的具体形态</td></tr><tr><td>一网通办、接诉即办、网格化、&quot;枫桥经验&quot;</td><td>治理方式现代化</td><td>论证&quot;制度优势转化为治理效能&quot;</td></tr></tbody></table></div>
-<p><strong>接法公式</strong>：一句话概括材料（10 字内）→ 一句话提炼观点 → 一句话回到题干关键词。</p>
-<p>例：&quot;材料中某县斥资建&#x27;地标&#x27;却拖欠教师工资，暴露的是政绩观错位——把&#x27;显绩&#x27;当政绩、把工程当民生。这恰恰说明，推进民生治理现代化，首先要解决&#x27;为谁干&#x27;的问题。&quot;</p></div></details><details open><summary>4. 金句与术语（挑 3–4 句用，别堆）</summary><div class="bd"><ul><li><strong>为民造福是最大政绩</strong></li><li>江山就是人民，人民就是江山</li><li>民生无小事，枝叶总关情</li><li><strong>功成不必在我</strong>的精神境界，<strong>功成必定有我</strong>的历史担当</li><li>把好事办好、实事办实</li><li>让人民群众的获得感成色更足、幸福感更可持续、安全感更有保障</li><li>尽力而为、量力而行</li><li>普惠性、基础性、兜底性</li><li>共建共治共享；系统治理、依法治理、综合治理、源头治理</li><li>经得起<strong>实践、人民、历史</strong>的检验</li></ul></div></details><details open><summary>5. 万能结尾（三句话）</summary><div class="bd"><blockquote>政绩观正不正，最终要由人民来评判；治理能力强不强，最终要在民生上见分晓。推进新时代保障民生治理现代化，本质上是要把&quot;为民造福&quot;从理念变成制度、从制度变成习惯，让每一届班子的政绩都经得起实践、人民、历史的检验。唯有如此，才能把&quot;江山就是人民、人民就是江山&quot;写进日常治理的每一个细节。</blockquote></div></details><details open><summary>6. 三个必须避开的坑</summary><div class="bd"><ol><li><strong>只谈政绩观，不谈民生治理</strong>——题干两个词都要落地，缺一个就偏题</li><li><strong>写成&quot;民生的重要性&quot;泛论</strong>——要有&quot;治理&quot;维度：制度、效能、方式、基层</li><li><strong>材料复述过多</strong>——材料只占三成篇幅，观点占七成；每段&quot;观点句&quot;必须放在段首</li></ol></div></details><details open><summary>7. 答题时间分配（按 20 分题）</summary><div class="bd"><div class="tw"><table><thead><tr><th>部分</th><th>篇幅</th><th>时间</th></tr></thead><tbody><tr><td>破题（一句话立意＋关键词定位）</td><td>80 字</td><td>2 分钟</td></tr><tr><td>意义（三层，每层 2–3 句）</td><td>350 字</td><td>8 分钟</td></tr><tr><td>作用（三条，每条观点＋依据＋一句材料）</td><td>400 字</td><td>8 分钟</td></tr><tr><td>结尾（金句收束）</td><td>80 字</td><td>2 分钟</td></tr></tbody></table></div></div></details><details open><summary>8. 一句话备忘</summary><div class="bd"><p><strong>政绩观是&quot;总开关&quot;，治理现代化是&quot;操作系统&quot;，民生是&quot;用户界面&quot;</strong>——开关不对，系统再好也没用；系统不行，界面再漂亮也是摆设。</p></div></details></div></article><article class="card" id="k10"><div class="card-head"><span class="badge">10</span><div><h2>中国式现代化五个特色</h2><p class="meta">第二章 · 中国式现代化（第二节） · p44–45</p></div><label><input type="checkbox" class="donebox">已背</label></div><div class="exam"><div class="eq"><span class="tag">题目</span><span>中国式现代化有哪些中国特色？</span></div><div class="alt">备选问法：如何理解中国式现代化是全体人民共同富裕的现代化？</div><div class="tpl"><b>结 构</b><ol><li>总纲一句。</li><li>五条并列，每条一句对照西方。</li><li>收尾一句。</li></ol></div><div class="fw"><b>范 文 · 可直接背</b><p>中国式现代化，是中国共产党领导的社会主义现代化，既有各国现代化的共同特征，更有基于自己国情的中国特色。</p><p>一是人口规模巨大的现代化。十四亿人口整体迈进现代化，艰巨性和复杂性前所未有，必须保持历史耐心，稳中求进。</p><p>二是全体人民共同富裕的现代化。这是区别于西方现代化的显著标志：西方以资本为中心导致两极分化，我们坚持以人民为中心，坚决防止两极分化。</p><p>三是物质文明和精神文明相协调的现代化。物质贫困不是社会主义，精神贫乏也不是社会主义，物质富足、精神富有才是根本要求。</p><p>四是人与自然和谐共生的现代化。坚持可持续发展，走生产发展、生活富裕、生态良好的文明发展道路。</p><p>五是走和平发展道路的现代化。不走战争、殖民、掠夺的老路，在维护世界和平中谋求自身发展。实践证明，中国式现代化走得通、行得稳。</p><span class="cnt">约 335 字</span></div></div><div class="card-body"><div class="note">教材：《习近平新时代中国特色社会主义思想概论》（2023 年版）<br>位置：<strong>第二章 以中国式现代化全面推进中华民族伟大复兴 → 第二节 中国式现代化是强国建设、民族复兴的唯一正确道路</strong>（p44–45，④⑤ 在 p46）<br>照片：`照片/p44.jpg`、`照片/p45.jpg`（老师页边手写&quot;中国式现代化的五个特征&quot;）<br>⚠️ 照片只拍到 ①②③，④⑤ 按二十大表述补全，已在文中标注</div><details open><summary>1. 总论（p44，必背）</summary><div class="bd"><blockquote>习近平指出：&quot;中国式现代化，是<strong>中国共产党领导的社会主义现代化</strong>，<strong>既有各国现代化的共同特征，更有基于自己国情的中国特色</strong>。&quot;</blockquote>
-<blockquote>党的二十大集中概括了中国式现代化<strong>五个方面</strong>的中国特色，深刻揭示了中国式现代化的<strong>科学内涵</strong>，这是<strong>理论概括</strong>，也是<strong>实践要求</strong>。</blockquote>
-<p><strong>开场铺垫句</strong>（p44 划线段）：</p>
-<blockquote>中国式现代化是我们党领导全国各族人民在长期探索和实践中<strong>历经千辛万苦、付出巨大代价</strong>取得的重大成果。实践证明，中国式现代化<strong>走得通、行得稳</strong>，我们必须<strong>倍加珍惜、始终坚持、不断拓展和深化</strong>。</blockquote></div></details><details open><summary>2. 五个特色（表）</summary><div class="bd"><div class="tw"><table><thead><tr><th>#</th><th>特色</th><th>关键词</th><th>对照的&quot;西方之弊&quot;</th></tr></thead><tbody><tr><td>①</td><td>中国式现代化是<strong>人口规模巨大</strong>的现代化</td><td>艰巨性、复杂性、历史耐心、稳中求进</td><td>—（独特国情）</td></tr><tr><td>②</td><td>中国式现代化是<strong>全体人民共同富裕</strong>的现代化</td><td>以人民为中心、人民性</td><td>以资本为中心、两极分化、阶层固化</td></tr><tr><td>③</td><td>中国式现代化是<strong>物质文明和精神文明相协调</strong>的现代化</td><td>物质富足、精神富有</td><td>财富积累＋信仰缺失、物欲横流</td></tr><tr><td>④</td><td>中国式现代化是<strong>人与自然和谐共生</strong>的现代化</td><td>可持续发展、节约优先保护优先</td><td>先污染后治理</td></tr><tr><td>⑤</td><td>中国式现代化是<strong>走和平发展道路</strong>的现代化</td><td>和平、发展、合作、共赢</td><td>战争、殖民、掠夺</td></tr></tbody></table></div></div></details><details open><summary>3. 逐条展开</summary><div class="bd"><h4>① 人口规模巨大的现代化（p44–45）</h4>
-<blockquote>人口规模不同，现代化①<strong>的任务就不同，其艰巨性和复杂性就不同，发展途径和推进方式也必然有自己的特点</strong>。我国全体人民整体迈进现代化，<strong>人口规模超过现有发达国家的总和</strong>，将<strong>极大改变现代化的世界版图</strong>。</blockquote>
-<blockquote>习近平指出：&quot;在我国这样一个<strong>十四亿</strong>人口的国家实现社会主义现代化，这是多么<strong>伟大</strong>、多么<strong>不易</strong>！&quot;</blockquote>
-<p><strong>两面性</strong>：</p>
-<ul><li>有利——提供充足的<strong>人力资源</strong>和<strong>超大规模市场</strong></li><li>挑战——光是解决<strong>吃饭问题</strong>就是不小的挑战，还有<strong>就业、分配、教育、医疗、住房、养老、托幼</strong>等问题，哪一项解决起来都不容易，涉及的人群都是<strong>天文数字</strong></li></ul>
-<p><strong>怎么办</strong>（四句话，可当方法论用）：</p>
-<blockquote>必须始终<strong>从具体国情出发</strong>想问题、作决策、办事情，<strong>既不好高骛远，也不因循守旧</strong>，保持<strong>历史耐心</strong>，坚持<strong>稳中求进、循序渐进、持续推进</strong>。</blockquote>
-<h4>② 全体人民共同富裕的现代化（p45）</h4>
-<blockquote>这是中国式现代化<strong>区别于西方现代化的显著标志</strong>。</blockquote>
-<p><strong>西方现代化的最大弊端</strong>：</p>
-<blockquote>以<strong>资本为中心</strong>而不是以<strong>人民为中心</strong>，追求<strong>资本利益最大化</strong>而不是服务<strong>绝大多数人的利益</strong>，导致<strong>贫富差距大、两极分化严重</strong>。一些发展中国家长期停滞甚至倒退，重要原因之一也是没有解决好<strong>两极分化、阶层固化</strong>问题。</blockquote>
-<p><strong>中国的做法</strong>：</p>
-<blockquote>坚持以<strong>人民为中心</strong>，突出现代化方向的<strong>人民性</strong>，在<strong>高质量发展</strong>中不断增进人民福祉，扎实推动全体人民共同富裕。必须把实现人民对美好生活的向往作为现代化建设的<strong>出发点和落脚点</strong>，在推动高质量发展的同时，解决好<strong>地区差距、城乡差距、收入分配差距</strong>，着力维护和促进<strong>社会公平正义</strong>，坚决<strong>防止两极分化</strong>。</blockquote>
-<h4>③ 物质文明和精神文明相协调的现代化（p45）</h4>
-<blockquote><strong>物质贫困不是社会主义，精神贫乏也不是社会主义。物质富足、精神富有是社会主义现代化的根本要求。</strong></blockquote>
-<p><strong>西方之弊</strong>：</p>
-<blockquote>西方早期的现代化，一边是<strong>财富积累</strong>，一边是<strong>信仰缺失、物欲横流</strong>。今天西方国家日渐陷入困境，一个重要原因就是<strong>无法遏制资本贪婪的本性</strong>，无法解决<strong>物质主义膨胀、精神贫乏</strong>等痼疾。</blockquote>
-<h4>④ 人与自然和谐共生的现代化（p46，照片未拍到，按二十大表述）</h4>
-<blockquote>人与自然的关系是人类社会最基本的关系。中国式现代化坚持<strong>可持续发展</strong>，坚持<strong>节约优先、保护优先、自然恢复为主</strong>的方针，像保护眼睛一样保护自然和生态环境，坚定不移走<strong>生产发展、生活富裕、生态良好的文明发展道路</strong>。</blockquote>
-<blockquote>💡 这句&quot;生产发展、生活富裕、生态良好&quot;和考点⑥（p244）的那句完全一样，可以互相引证——说明老师在第十二章和第二章划的是同一个逻辑。</blockquote>
-<h4>⑤ 走和平发展道路的现代化（p46，照片未拍到，按二十大表述）</h4>
-<blockquote>我国<strong>不走一些国家通过战争、殖民、掠夺等方式实现现代化的老路</strong>，那种<strong>损人利己、充满血腥罪恶</strong>的老路给广大发展中国家人民带来深重苦难。我们坚定<strong>站在历史正确的一边、站在人类文明进步的一边</strong>，高举<strong>和平、发展、合作、共赢</strong>旗帜，在坚定维护世界和平与发展中谋求自身发展，又以自身发展更好维护世界和平与发展。</blockquote></div></details><details open><summary>4. 五条的内在逻辑（写论述题时用来&quot;串&quot;）</summary><div class="bd"><blockquote><strong>规模（国情）→ 分配（价值）→ 文明（形态）→ 生态（自然）→ 世界（外部）</strong></blockquote>
-<p>从&quot;我们有多少人&quot;讲到&quot;钱怎么分&quot;，再讲到&quot;人怎么活&quot;、&quot;天地怎么处&quot;、&quot;世界怎么待&quot;——<strong>五条正好是五个尺度：人口、社会、精神、自然、国际</strong>。</p></div></details><details open><summary>5. 极易混淆：五个特色 ≠ 九个本质要求</summary><div class="bd"><p><strong>五个特色</strong>回答的是&quot;<strong>中国式现代化长什么样</strong>&quot;（特征）。</p>
-<p><strong>本质要求</strong>回答的是&quot;<strong>中国式现代化在本质上要求什么</strong>&quot;（九个方面）：</p>
-<blockquote>坚持中国共产党领导，坚持中国特色社会主义，实现高质量发展，发展全过程人民民主，丰富人民精神世界，实现全体人民共同富裕，促进人与自然和谐共生，推动构建人类命运共同体，创造人类文明新形态。</blockquote>
-<p>⚠️ 两者都有&quot;共同富裕&quot;&quot;人与自然和谐共生&quot;字样，<strong>如果题目问&quot;特色&quot;，只答五个；问&quot;本质要求&quot;，答九个</strong>。混答直接扣分。</p></div></details><details open><summary>6. 可能怎么考</summary><div class="bd"><ol><li><strong>简答/论述</strong>（本题）：中国式现代化有哪些中国特色？→ 五条＋每条一句展开＋一句&quot;区别于西方&quot;</li><li><strong>简答</strong>：为什么说中国式现代化是全体人民共同富裕的现代化？</li><li><strong>论述</strong>：中国式现代化与西方现代化的区别在哪里？→ 用②③⑤三条对照最有力</li><li><strong>辨析</strong>：&quot;中国式现代化就是完成西方国家已经走过的现代化历程&quot; → 错，有共同特征但更有中国特色</li><li><strong>填空</strong>：十四亿人口；五级（人口、社会、精神、自然、国际）</li></ol></div></details><details open><summary>7. 背诵（10 分钟）</summary><div class="bd"><ol><li>先背五个定语：<strong>人口规模巨大 / 全体人民共同富裕 / 物质文明和精神文明相协调 / 人与自然和谐共生 / 走和平发展道路</strong></li><li>每条配一个&quot;区别点&quot;：规模 → 艰巨性；富裕 → 人民性；文明 → 两个富有；生态 → 可持续；和平 → 不走老路</li><li>记住总纲一句：&quot;既有各国现代化的共同特征，更有基于自己国情的中国特色&quot;</li><li>别把&quot;五个特色&quot;和&quot;九个本质要求&quot;串了</li></ol></div></details></div></article>
-<footer>十个考点 · 横跨第二、五、八、九、十二、十四、十五、十六章<br>「自测模式」会把每节内容折叠起来：只看标题自己复述一遍，再点开核对</footer>
-</main>
+</section>
+<div class="chips" id="chips"><a href="#q1" data-n="1"><b>01</b>新时代人民军队的使命任务，概括…</a><a href="#q2" data-n="2"><b>02</b>新时代党解决台湾问题，实现祖国…</a><a href="#q3" data-n="3"><b>03</b>阐述全面深化改革的总目标</a><a href="#q4" data-n="4"><b>04</b>简述“全过程人民民主是社会主义…</a><a href="#q5" data-n="5"><b>05</b>简述“人类命运共同体的丰富内涵”</a><a href="#q6" data-n="6"><b>06</b>如何理解“绿水青山就是金山银山…</a><a href="#q7" data-n="7"><b>07</b>阐述社会主义核心价值观的基本内容</a><a href="#q8" data-n="8"><b>08</b>党在百年奋斗历程中分别实现了哪…</a><a href="#q9" data-n="9"><b>09</b>结合政绩观，谈一谈对推进新时代…</a><a href="#q10" data-n="10"><b>10</b>谈一谈中国式现代化五个方面的鲜…</a><a href="#q11" data-n="11"><b>11</b>结合国家安全观，谈一谈为什么要…</a><a href="#q12" data-n="12"><b>12</b>四个全面战略布局内容</a><a href="#q13" data-n="13"><b>13</b>论述社会经济发展与人的全面发展…</a><a href="#q14" data-n="14"><b>14</b>论述构建人类命运共同体的目标追…</a><a href="#q15" data-n="15"><b>15</b>在文化认同中，怎么推进中华民族…</a><a href="#q16" data-n="16"><b>16</b>如何理解国家与安全的关系？</a><a href="#q17" data-n="17"><b>17</b>为什么加快构建新发展格局是实现…</a><a href="#q18" data-n="18"><b>18</b>谈一谈对新质生产力的理解（开放…</a><a href="#q19" data-n="19"><b>19</b>论述全面依法治国是国家治理的一…</a><a href="#q20" data-n="20"><b>20</b>如何理解中国特色社会主义新时代…</a><a href="#q21" data-n="21"><b>21</b>结合习近平生态思想，阐释如何加…</a></div>
 </div>
-<button id="toTop" title="回到顶部">↑</button>
+<main class="wrap" id="main"><article class="q" id="q1" data-n="1" data-k="新时代人民军队的使命任务，概括起来是哪四个“战略支撑”？1.为巩固中国共产党领导和我国社会主义制度提供战略支撑2.为捍卫国家主权、统一和领土完整提供战略支撑3.为维护我国海外利益提供战略支撑4.为促进世界和平与发展提供战略支撑"><div class="q-head"><div class="qno">1</div><div class="qh"><h2>新时代人民军队的使命任务，概括起来是哪四个“战略支撑”？</h2><div class="meta">参考答案 · 约 85 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>为巩固中国共产党领导和我国社会主义制度提供战略支撑</p><p class="li"><span class="n">2.</span>为捍卫国家主权、统一和领土完整提供战略支撑</p><p class="li"><span class="n">3.</span>为维护我国海外利益提供战略支撑</p><p class="li"><span class="n">4.</span>为促进世界和平与发展提供战略支撑</p></div></article>
+<article class="q" id="q2" data-n="2" data-k="新时代党解决台湾问题，实现祖国完全统一的总体方略全面贯彻新时代党解决台湾问题的总体方略：坚持党中央对台工作集中统一领导（根本保障）坚持在中华民族伟大复兴进程中推进祖国统一（历史方位）坚持在祖国大陆发展进步基础上解决台湾问题（战略思想）坚持“和平统一、一国两制”基本方针（大政方针）坚持一个中国原则和“九二共识”（政治基础）坚持推动两岸关系和平发展、融合发展（实践途径）坚持团结台湾同胞、争取台湾民心（根本动力）坚持粉碎“台独“分裂图谋（必然要求）坚持反对外部势力干涉（外部条件）坚持绝不承诺放弃使用武力（战略支撑）"><div class="q-head"><div class="qno">2</div><div class="qh"><h2>新时代党解决台湾问题，实现祖国完全统一的总体方略</h2><div class="meta">参考答案 · 约 233 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p>全面贯彻新时代党解决台湾问题的总体方略：</p><p>坚持党中央对台工作集中统一领导（根本保障）</p><p>坚持在中华民族伟大复兴进程中推进祖国统一（历史方位）</p><p>坚持在祖国大陆发展进步基础上解决台湾问题（战略思想）</p><p>坚持“和平统一、一国两制”基本方针（大政方针）</p><p>坚持一个中国原则和“九二共识”（政治基础）</p><p>坚持推动两岸关系和平发展、融合发展（实践途径）</p><p>坚持团结台湾同胞、争取台湾民心（根本动力）</p><p>坚持粉碎“台独“分裂图谋（必然要求）</p><p>坚持反对外部势力干涉（外部条件）</p><p>坚持绝不承诺放弃使用武力（战略支撑）</p></div></article>
+<article class="q" id="q3" data-n="3" data-k="阐述全面深化改革的总目标全面深化改革的总目标是：完善和发展中国特色社会主义制度、推进国家治理体系和治理能力现代化。这一总目标是一个内涵丰富的有机整体。“完善和发展中国特色社会主义制度“，规定了改革的根本方向，就是无论改什么、怎么改，都要坚持中国共产党的领导、坚持中国特色社会主义，就是要通过改革推动中国特色社会主义制度更加成熟定型、更好发挥中国特色社会主义制度的优越性。“推进国家治理体系和治理能力现代化“，明确了改革的鲜明指向和时代要求，就是要通过改革进一步增强我国制度活力，把制度优势转化为国家治理效能。"><div class="q-head"><div class="qno">3</div><div class="qh"><h2>阐述全面深化改革的总目标</h2><div class="meta">参考答案 · 约 242 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p>全面深化改革的总目标是：完善和发展中国特色社会主义制度、推进国家治理体系和治理能力现代化。</p><p>这一总目标是一个内涵丰富的有机整体。</p><p>“完善和发展中国特色社会主义制度“，规定了改革的根本方向，就是无论改什么、怎么改，都要坚持中国共产党的领导、坚持中国特色社会主义，就是要通过改革推动中国特色社会主义制度更加成熟定型、更好发挥中国特色社会主义制度的优越性。</p><p>“推进国家治理体系和治理能力现代化“，明确了改革的鲜明指向和时代要求，就是要通过改革进一步增强我国制度活力，把制度优势转化为国家治理效能。</p></div></article>
+<article class="q" id="q4" data-n="4" data-k="简述“全过程人民民主是社会主义民主政治的本质属性“口诀：三全三最四统一全过程人民民主是社会主义民主政治的伟大创造（原因）：全过程人民民主是过程民主和成果民主的统一全过程人民民主是程序民主和实质民主的统一全过程人民民主是直接民主和间接民主的统一全过程人民民主是人民民主和国家意志的统一全过程人民民主是全链条、全方位、全覆盖的民主全过程人民民主是最广泛、最真实、最管用的民主"><div class="q-head"><div class="qno">4</div><div class="qh"><h2>简述“全过程人民民主是社会主义民主政治的本质属性“</h2><div class="meta">参考答案 · 约 160 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p>口诀：三全三最四统一</p><p>全过程人民民主是社会主义民主政治的伟大创造（原因）：</p><p>全过程人民民主是过程民主和成果民主的统一</p><p>全过程人民民主是程序民主和实质民主的统一</p><p>全过程人民民主是直接民主和间接民主的统一</p><p>全过程人民民主是人民民主和国家意志的统一</p><p>全过程人民民主是全链条、全方位、全覆盖的民主</p><p>全过程人民民主是最广泛、最真实、最管用的民主</p></div></article>
+<article class="q" id="q5" data-n="5" data-k="简述“人类命运共同体的丰富内涵”构建人类命运共同体，就是要携手世界各国人民共同建设持久和平、普遍安全、共同繁荣、开放包容、清洁美丽的世界。建设持久和平的世界：就要坚持国家之间的对话协商，坚持大国小国一律平等，构建对话不对抗、结伴不结盟的伙伴关系，尊重彼此核心利益和重大关切，管控矛盾分歧，努力形成相互尊重、公平正义、合作共赢的新型国际关系。建设普遍安全的世界：就要树立共同、综合、合作、可持续的安全观，统筹应对传统和非传统安全威胁，反对一切形式的恐怖主义，营造公道正义、共建共享的安全格局。建设共同繁荣的世界：就要坚持你好我好大家好的理念，推进开发、包容、普惠、平衡、共赢的经济全球化，创造全人类共同发展的良好条件，共同推动世界各国发展繁荣，让发展成果惠及全世界各国。建设开发包容的世界：就要坚持交流互鉴，促进和而不同、兼收并蓄的文明交流，不同文明之间要对话不要对立，要交流不要取代，要包容不要冲突，推动人类文明实现创造性发展。建设清洁美丽的世界：就要倡导绿色、低碳、循环、可持续的生产生活方式，采取行动应对气候变化，构筑尊崇自然、绿色发展的生态体系，促进人与自然和谐共生，共建地球生命共同体。（每点择一两句即可）"><div class="q-head"><div class="qno">5</div><div class="qh"><h2>简述“人类命运共同体的丰富内涵”</h2><div class="meta">参考答案 · 约 491 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p>构建人类命运共同体，就是要携手世界各国人民共同建设持久和平、普遍安全、共同繁荣、开放包容、清洁美丽的世界。</p><p>建设持久和平的世界：就要坚持国家之间的对话协商，坚持大国小国一律平等，构建对话不对抗、结伴不结盟的伙伴关系，尊重彼此核心利益和重大关切，管控矛盾分歧，努力形成相互尊重、公平正义、合作共赢的新型国际关系。</p><p>建设普遍安全的世界：就要树立共同、综合、合作、可持续的安全观，统筹应对传统和非传统安全威胁，反对一切形式的恐怖主义，营造公道正义、共建共享的安全格局。</p><p>建设共同繁荣的世界：就要坚持你好我好大家好的理念，推进开发、包容、普惠、平衡、共赢的经济全球化，创造全人类共同发展的良好条件，共同推动世界各国发展繁荣，让发展成果惠及全世界各国。</p><p>建设开发包容的世界：就要坚持交流互鉴，促进和而不同、兼收并蓄的文明交流，不同文明之间要对话不要对立，要交流不要取代，要包容不要冲突，推动人类文明实现创造性发展。</p><p>建设清洁美丽的世界：就要倡导绿色、低碳、循环、可持续的生产生活方式，采取行动应对气候变化，构筑尊崇自然、绿色发展的生态体系，促进人与自然和谐共生，共建地球生命共同体。</p><p class="note">（每点择一两句即可）</p></div></article>
+<article class="q" id="q6" data-n="6" data-k="如何理解“绿水青山就是金山银山”？1.绿水青山就是金山银山，这是重要的发展理念，也是推进现代化建设的重大原则。这一理念，阐明了经济发展与生态环境保护之间的关系，揭示了保护生态环境就是保护生产力、改善生态环境就是发展生产力的道理，指明了实现发展和保护协同共生的新路径。2.经济发展与生态环境保护之间是辩证统一、相辅相成的关系。实践证明，经济发展不能以破坏生态为代价，不能把生态环境保护和经济发展割裂开来，更不能对立起来。3.绿水青山既是自然财富、生态财富，又是社会财富、经济财富。4.处理好绿水青山和金山银山的关系，关键在人，关键在思路。坚持正确的发展理念，产业和生态完全可以相得益彰、和平共处，实现经济效益、社会效益、生态效益同步提升。"><div class="q-head"><div class="qno">6</div><div class="qh"><h2>如何理解“绿水青山就是金山银山”？</h2><div class="meta">参考答案 · 约 301 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>绿水青山就是金山银山，这是重要的发展理念，也是推进现代化建设的重大原则。这一理念，阐明了经济发展与生态环境保护之间的关系，揭示了保护生态环境就是保护生产力、改善生态环境就是发展生产力的道理，指明了实现发展和保护协同共生的新路径。</p><p class="li"><span class="n">2.</span>经济发展与生态环境保护之间是辩证统一、相辅相成的关系。实践证明，经济发展不能以破坏生态为代价，不能把生态环境保护和经济发展割裂开来，更不能对立起来。</p><p class="li"><span class="n">3.</span>绿水青山既是自然财富、生态财富，又是社会财富、经济财富。</p><p class="li"><span class="n">4.</span>处理好绿水青山和金山银山的关系，关键在人，关键在思路。坚持正确的发展理念，产业和生态完全可以相得益彰、和平共处，实现经济效益、社会效益、生态效益同步提升。</p></div></article>
+<article class="q" id="q7" data-n="7" data-k="阐述社会主义核心价值观的基本内容富强、民主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善。分为三个点，结合材料，要有论述与分析。例如某某例子就体现的社会主义价值观在国家层面的要求。总起：社会主义核心价值观以富强、民主、文明、和谐，自由、平等、公正、法治，爱国、敬业、诚信、友善为基本内容，把涉及国家、社会、公民的价值要求融为一体，回答了我们要建设什么样的国家、建设什么样的社会、培育什么样的公民的重大问题。1.国家层面：富强、民主、文明、和谐。这是社会主义现代化国家的建设目标。如脱贫攻坚、科技自立自强、端牢粮食安全饭碗，体现的就是国家层面的富强。2.社会层面：自由、平等、公正、法治。这是对美好社会的生动表述。如基层立法联系点让群众参与立法、司法改革保障公平正义，体现的就是社会层面的公正和法治。3.公民层面：爱国、敬业、诚信、友善。这是公民基本道德规范。如驻村第一书记、抗疫中的志愿者，体现的就是公民层面的爱国和敬业。收尾：三个层面既体现了社会主义本质要求，继承了中华优秀传统文化，也吸收了世界文明有益成果，对于巩固社会主义制度、推进国家繁荣发展、维系社会和谐稳定具有重要作用。"><div class="q-head"><div class="qno">7</div><div class="qh"><h2>阐述社会主义核心价值观的基本内容</h2><div class="meta">参考答案 · 约 482 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p>富强、民主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善。</p><p>分为三个点，结合材料，要有论述与分析。例如某某例子就体现的社会主义价值观在国家层面的要求。</p><p>总起：社会主义核心价值观以富强、民主、文明、和谐，自由、平等、公正、法治，爱国、敬业、诚信、友善为基本内容，把涉及国家、社会、公民的价值要求融为一体，回答了我们要建设什么样的国家、建设什么样的社会、培育什么样的公民的重大问题。</p><p class="li"><span class="n">1.</span>国家层面：富强、民主、文明、和谐。这是社会主义现代化国家的建设目标。如脱贫攻坚、科技自立自强、端牢粮食安全饭碗，体现的就是国家层面的富强。</p><p class="li"><span class="n">2.</span>社会层面：自由、平等、公正、法治。这是对美好社会的生动表述。如基层立法联系点让群众参与立法、司法改革保障公平正义，体现的就是社会层面的公正和法治。</p><p class="li"><span class="n">3.</span>公民层面：爱国、敬业、诚信、友善。这是公民基本道德规范。如驻村第一书记、抗疫中的志愿者，体现的就是公民层面的爱国和敬业。</p><p>收尾：三个层面既体现了社会主义本质要求，继承了中华优秀传统文化，也吸收了世界文明有益成果，对于巩固社会主义制度、推进国家繁荣发展、维系社会和谐稳定具有重要作用。</p></div></article>
+<article class="q" id="q8" data-n="8" data-k="党在百年奋斗历程中分别实现了哪四次伟大飞跃？1.为了实现这个伟大梦想，中国共产党团结带领人民，浴血奋战、百折不挠，推翻帝国主义、封建主义、官僚资本主义这三座大山，完成了新民主主义革命，建立了中华人民共和国，实现了中国从几千年封建专制政治向人民民主的伟大飞跃，中国人民从此站起来了。2.自力更生、发愤图强，进行社会主义革命，建立社会主义制度，推进社会主义建设，实现了一穷二白、人口众多的东方大国大步迈进社会主义社会的伟大飞跃。3.解放思想、锐意进取，坚定不移推进改革开放，开创、坚持、捍卫、发展中国特色社会主义，极大解放和发展社会生产力，推进了中华民族从站起来到富起来的伟大飞跃。4.自信自强、守正创新，开创了中国特色社会主义新时代，全面建成小康社会、迈上全面建设社会主义现代化国家新征程，中华民族迎来了从站起来、富起来到强起来的伟大飞跃。"><div class="q-head"><div class="qno">8</div><div class="qh"><h2>党在百年奋斗历程中分别实现了哪四次伟大飞跃？</h2><div class="meta">参考答案 · 约 347 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>为了实现这个伟大梦想，中国共产党团结带领人民，浴血奋战、百折不挠，推翻帝国主义、封建主义、官僚资本主义这三座大山，完成了新民主主义革命，建立了中华人民共和国，实现了中国从几千年封建专制政治向人民民主的伟大飞跃，中国人民从此站起来了。</p><p class="li"><span class="n">2.</span>自力更生、发愤图强，进行社会主义革命，建立社会主义制度，推进社会主义建设，实现了一穷二白、人口众多的东方大国大步迈进社会主义社会的伟大飞跃。</p><p class="li"><span class="n">3.</span>解放思想、锐意进取，坚定不移推进改革开放，开创、坚持、捍卫、发展中国特色社会主义，极大解放和发展社会生产力，推进了中华民族从站起来到富起来的伟大飞跃。</p><p class="li"><span class="n">4.</span>自信自强、守正创新，开创了中国特色社会主义新时代，全面建成小康社会、迈上全面建设社会主义现代化国家新征程，中华民族迎来了从站起来、富起来到强起来的伟大飞跃。</p></div></article>
+<article class="q" id="q9" data-n="9" data-k="结合政绩观，谈一谈对推进新时代保障民生社会治理现代化有什么重要作用和意义？（开放）树立和践行正确政绩观，增强民生福祉、提高社会治理效能、不搞形式主义。人民至上，推动高质量发展。完善考核评价机制，形成正确导向。反对形式主义，确立实干导向。1.树立和践行正确政绩观。为民造福是最大政绩，政绩为谁而树、树什么样的政绩，最终要看群众的获得感、幸福感、安全感。2.坚持人民至上，在发展中保障和改善民生。着力解决就业、教育、医疗、养老、住房等群众急难愁盼问题，兜住兜牢民生底线。3.完善考核评价机制，形成正确导向。把民生改善、社会治理成效纳入干部考核，不简单以 gdp 增长率论英雄，引导干部把功夫下在打基础、利长远上。4.反对形式主义，确立实干导向。不搞形象工程、政绩工程，不搞数字政绩，把好事办好、实事办实。5.提高社会治理效能。完善共建共治共享的社会治理格局，坚持系统治理、依法治理、综合治理、源头治理，把矛盾化解在基层、化解在萌芽状态。"><div class="q-head"><div class="qno">9</div><div class="qh"><h2>结合政绩观，谈一谈对推进新时代保障民生社会治理现代化有什么重要作用和意义？（开放）</h2><div class="meta">参考答案 · 约 375 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p>树立和践行正确政绩观，增强民生福祉、提高社会治理效能、不搞形式主义。</p><p>人民至上，推动高质量发展。完善考核评价机制，形成正确导向。</p><p>反对形式主义，确立实干导向。</p><p class="li"><span class="n">1.</span>树立和践行正确政绩观。为民造福是最大政绩，政绩为谁而树、树什么样的政绩，最终要看群众的获得感、幸福感、安全感。</p><p class="li"><span class="n">2.</span>坚持人民至上，在发展中保障和改善民生。着力解决就业、教育、医疗、养老、住房等群众急难愁盼问题，兜住兜牢民生底线。</p><p class="li"><span class="n">3.</span>完善考核评价机制，形成正确导向。把民生改善、社会治理成效纳入干部考核，不简单以 GDP 增长率论英雄，引导干部把功夫下在打基础、利长远上。</p><p class="li"><span class="n">4.</span>反对形式主义，确立实干导向。不搞形象工程、政绩工程，不搞数字政绩，把好事办好、实事办实。</p><p class="li"><span class="n">5.</span>提高社会治理效能。完善共建共治共享的社会治理格局，坚持系统治理、依法治理、综合治理、源头治理，把矛盾化解在基层、化解在萌芽状态。</p></div></article>
+<article class="q" id="q10" data-n="10" data-k="谈一谈中国式现代化五个方面的鲜明特色（论述题）1.中国式现代化式是人口规模巨大化的现代化，十四亿多人口整体迈入现代化，规模超过现有发达国家人口总和，艰巨性和复杂性前所未有，必须坚持走符合中国国情的现代化道路。2.中国式现代化是全体人民共同富裕的现代化。这是中国式现代化区别于西方现代化的显著标志。3.中国式现代化是物质文明和精神文明相协调的现代化。它要求在物质全面丰富的同时大力发展社会主义先进文化，促进人的全面发展，避免西方现代化物质主义膨胀、精神空虚的弊端。4.中国式现代化是人与自然和谐共生的现代化。它坚持绿水青山就是金山银山，走生产发展、生活富裕、生态良好的文明发展道路，避免先污染后治理的老路。5.中国式现代化是走和平发展道路的现代化。它不走殖民扩张、国强必霸的老路，而是在维护世界和平中发展自身、以自身发展更好维护世界和平，推动构建人类命运共同体。"><div class="q-head"><div class="qno">10</div><div class="qh"><h2>谈一谈中国式现代化五个方面的鲜明特色（论述题）</h2><div class="meta">参考答案 · 约 357 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>中国式现代化式是人口规模巨大化的现代化，十四亿多人口整体迈入现代化，规模超过现有发达国家人口总和，艰巨性和复杂性前所未有，必须坚持走符合中国国情的现代化道路。</p><p class="li"><span class="n">2.</span>中国式现代化是全体人民共同富裕的现代化。这是中国式现代化区别于西方现代化的显著标志。</p><p class="li"><span class="n">3.</span>中国式现代化是物质文明和精神文明相协调的现代化。它要求在物质全面丰富的同时大力发展社会主义先进文化，促进人的全面发展，避免西方现代化物质主义膨胀、精神空虚的弊端。</p><p class="li"><span class="n">4.</span>中国式现代化是人与自然和谐共生的现代化。它坚持绿水青山就是金山银山，走生产发展、生活富裕、生态良好的文明发展道路，避免先污染后治理的老路。</p><p class="li"><span class="n">5.</span>中国式现代化是走和平发展道路的现代化。它不走殖民扩张、国强必霸的老路，而是在维护世界和平中发展自身、以自身发展更好维护世界和平，推动构建人类命运共同体。</p></div></article>
+<article class="q" id="q11" data-n="11" data-k="结合国家安全观，谈一谈为什么要建设、巩固国防和强大人民军队？1.强国必须强军2.军强才能国安+（四个战略支撑，即第一个考点里的内容）（1）为巩固中国共产党领导和我国社会主义制度提供战略支撑。马克思主义认为，军队是政权建立和巩固的首要条件，执政必然要执军。人民军队必须坚决听党指挥，坚决保卫社会主义制度，坚决维护国家政权安全和社会大局稳定。（2）为捍卫国家主权、统一和领土完整提供战略支撑。我国拥有2.2万多千米陆地边界、1.8万多千米大陆海岸线，是世界上邻国最多、海上安全环境十分复杂的国家之一。人民军队必须做好随时打硬仗的准备，坚决捍卫国家核心利益，决不后退一步，决不丢失一寸领土。（3）为维护我国海外利益提供战略支撑。国家利益发展到哪里，安全保障就必须跟进到哪里；在我国海外利益、公民安全遭受威胁时，人民军队必须肩负起提供强有力军事保障的责任。（4）为促进世界和平与发展提供战略支撑。中国军队坚持积极防御的战略方针，从未主动挑起过任何一场战争和冲突，从未侵占别国一寸土地；新时代必须适应推动构建人类命运共同体的战略要求，为维护和平的国际环境发挥更大作用。3.世界新军事革命步伐加快，国际军事竞争日趋激烈，各主要大国纷纷调整安全策略、军事战略，改革军队组织形态，发展新型作战力量，加快建设智能化军事体系，竞相抢占军事竞争战略制高点。"><div class="q-head"><div class="qno">11</div><div class="qh"><h2>结合国家安全观，谈一谈为什么要建设、巩固国防和强大人民军队？</h2><div class="meta">参考答案 · 约 537 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>强国必须强军</p><p class="li"><span class="n">2.</span>军强才能国安+（四个战略支撑，即第一个考点里的内容）</p><p class="li"><span class="n">（1）</span>为巩固中国共产党领导和我国社会主义制度提供战略支撑。马克思主义认为，军队是政权建立和巩固的首要条件，执政必然要执军。人民军队必须坚决听党指挥，坚决保卫社会主义制度，坚决维护国家政权安全和社会大局稳定。</p><p class="li"><span class="n">（2）</span>为捍卫国家主权、统一和领土完整提供战略支撑。我国拥有2.2万多千米陆地边界、1.8万多千米大陆海岸线，是世界上邻国最多、海上安全环境十分复杂的国家之一。人民军队必须做好随时打硬仗的准备，坚决捍卫国家核心利益，决不后退一步，决不丢失一寸领土。</p><p class="li"><span class="n">（3）</span>为维护我国海外利益提供战略支撑。国家利益发展到哪里，安全保障就必须跟进到哪里；在我国海外利益、公民安全遭受威胁时，人民军队必须肩负起提供强有力军事保障的责任。</p><p class="li"><span class="n">（4）</span>为促进世界和平与发展提供战略支撑。中国军队坚持积极防御的战略方针，从未主动挑起过任何一场战争和冲突，从未侵占别国一寸土地；新时代必须适应推动构建人类命运共同体的战略要求，为维护和平的国际环境发挥更大作用。</p><p class="li"><span class="n">3.</span>世界新军事革命步伐加快，国际军事竞争日趋激烈，各主要大国纷纷调整安全策略、军事战略，改革军队组织形态，发展新型作战力量，加快建设智能化军事体系，竞相抢占军事竞争战略制高点。</p></div></article>
+<article class="q" id="q12" data-n="12" data-k="四个全面战略布局内容全面建设社会主义现代化国家全面依法治国全面深化改革全面从严治党"><div class="q-head"><div class="qno">12</div><div class="qh"><h2>四个全面战略布局内容</h2><div class="meta">参考答案 · 约 31 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p>全面建设社会主义现代化国家</p><p>全面依法治国</p><p>全面深化改革</p><p>全面从严治党</p></div></article>
+<article class="q" id="q13" data-n="13" data-k="论述社会经济发展与人的全面发展之间的关系（开放，5点）1.经济发展是人的全面发展的物质基础。生产力发展水平决定人能获得什么样的发展条件，物质富足才能为教育、医疗、文化等事业提供支撑，离开发展谈人的全面发展是空话。2.人的全面发展是经济发展的根本目的和根本动力。以人民为中心的发展思想要求把增进民生福祉作为发展的出发点和落脚点；劳动者素质提高、人力资本积累，反过来又推动高质量发展。3.二者统一于高质量发展和中国式现代化。中国式现代化是全体人民共同富裕的现代化，也是物质文明和精神文明相协调的现代化，既要做大蛋糕，也要分好蛋糕，实现物质富足、精神富有。4.要防止“见物不见人”。不能唯 gdp、不能以资本为中心，要促进社会公平正义和机会均等，解决好地区差距、城乡差距、收入分配差距，防止两极分化。5.以制度安排促进人的全面发展。发展教育、扩大就业、完善社会保障、推进健康中国、繁荣文化事业，把人的现代化贯穿现代化全过程，实现发展与人的发展的良性循环。"><div class="q-head"><div class="qno">13</div><div class="qh"><h2>论述社会经济发展与人的全面发展之间的关系（开放，5点）</h2><div class="meta">参考答案 · 约 397 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>经济发展是人的全面发展的物质基础。生产力发展水平决定人能获得什么样的发展条件，物质富足才能为教育、医疗、文化等事业提供支撑，离开发展谈人的全面发展是空话。</p><p class="li"><span class="n">2.</span>人的全面发展是经济发展的根本目的和根本动力。以人民为中心的发展思想要求把增进民生福祉作为发展的出发点和落脚点；劳动者素质提高、人力资本积累，反过来又推动高质量发展。</p><p class="li"><span class="n">3.</span>二者统一于高质量发展和中国式现代化。中国式现代化是全体人民共同富裕的现代化，也是物质文明和精神文明相协调的现代化，既要做大蛋糕，也要分好蛋糕，实现物质富足、精神富有。</p><p class="li"><span class="n">4.</span>要防止“见物不见人”。不能唯 GDP、不能以资本为中心，要促进社会公平正义和机会均等，解决好地区差距、城乡差距、收入分配差距，防止两极分化。</p><p class="li"><span class="n">5.</span>以制度安排促进人的全面发展。发展教育、扩大就业、完善社会保障、推进健康中国、繁荣文化事业，把人的现代化贯穿现代化全过程，实现发展与人的发展的良性循环。</p></div></article>
+<article class="q" id="q14" data-n="14" data-k="论述构建人类命运共同体的目标追求与方式途径一、目标追求1.总目标：建设持久和平、普遍安全、共同繁荣、开放包容、清洁美丽的世界。2.价值追求：坚持相互尊重、公平正义、合作共赢，弘扬和平、发展、公平、正义、民主、自由的全人类共同价值。3.最终指向：把世界各国人民对美好生活的向往变成现实，推动构建人类命运共同体，创造人类文明新形态。二、方式途径1.政治上坚持对话协商，构建对话不对抗、结伴不结盟的全球伙伴关系，坚持大国小国一律平等，尊重彼此核心利益和重大关切。2.安全上坚持共建共享，树立共同、综合、合作、可持续的安全观，统筹应对传统和非传统安全威胁。3.经济上坚持合作共赢，推动开放、包容、普惠、平衡、共赢的经济全球化，共建“一带一路”，让发展成果惠及各国。4.文化上坚持交流互鉴，要对话不要对立、要交流不要取代、要包容不要冲突。5.生态上坚持绿色低碳，共同应对气候变化，共建地球生命共同体。6.全球治理上践行真正的多边主义，落实全球发展倡议、全球安全倡议、全球文明倡议，推动全球治理朝着更加公正合理的方向发展。"><div class="q-head"><div class="qno">14</div><div class="qh"><h2>论述构建人类命运共同体的目标追求与方式途径</h2><div class="meta">参考答案 · 约 434 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="sub">一、目标追求</p><p class="li"><span class="n">1.</span>总目标：建设持久和平、普遍安全、共同繁荣、开放包容、清洁美丽的世界。</p><p class="li"><span class="n">2.</span>价值追求：坚持相互尊重、公平正义、合作共赢，弘扬和平、发展、公平、正义、民主、自由的全人类共同价值。</p><p class="li"><span class="n">3.</span>最终指向：把世界各国人民对美好生活的向往变成现实，推动构建人类命运共同体，创造人类文明新形态。</p><p class="sub">二、方式途径</p><p class="li"><span class="n">1.</span>政治上坚持对话协商，构建对话不对抗、结伴不结盟的全球伙伴关系，坚持大国小国一律平等，尊重彼此核心利益和重大关切。</p><p class="li"><span class="n">2.</span>安全上坚持共建共享，树立共同、综合、合作、可持续的安全观，统筹应对传统和非传统安全威胁。</p><p class="li"><span class="n">3.</span>经济上坚持合作共赢，推动开放、包容、普惠、平衡、共赢的经济全球化，共建“一带一路”，让发展成果惠及各国。</p><p class="li"><span class="n">4.</span>文化上坚持交流互鉴，要对话不要对立、要交流不要取代、要包容不要冲突。</p><p class="li"><span class="n">5.</span>生态上坚持绿色低碳，共同应对气候变化，共建地球生命共同体。</p><p class="li"><span class="n">6.</span>全球治理上践行真正的多边主义，落实全球发展倡议、全球安全倡议、全球文明倡议，推动全球治理朝着更加公正合理的方向发展。</p></div></article>
+<article class="q" id="q15" data-n="15" data-k="在文化认同中，怎么推进中华民族共同体建设？（开放）1.尊重文化多样性，增强文化共同性。2.增强中华文化认同感。3.推广使用国家通用文字4.弘扬共同历史记忆，培育民族精神5.融入教育与实践，内化于心、外化于行。"><div class="q-head"><div class="qno">15</div><div class="qh"><h2>在文化认同中，怎么推进中华民族共同体建设？（开放）</h2><div class="meta">参考答案 · 约 79 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>尊重文化多样性，增强文化共同性。</p><p class="li"><span class="n">2.</span>增强中华文化认同感。</p><p class="li"><span class="n">3.</span>推广使用国家通用文字</p><p class="li"><span class="n">4.</span>弘扬共同历史记忆，培育民族精神</p><p class="li"><span class="n">5.</span>融入教育与实践，内化于心、外化于行。</p></div></article>
+<article class="q" id="q16" data-n="16" data-k="如何理解国家与安全的关系？（发展和安全之间的关系）1．发展解决的是动力问题，是推动国家和民族赓续绵延的根本支撑；安全解决的是保障问题，是确保国家和民族行稳致远的坚强柱石。2.发展具有基础性、根本性，是解决安全问题的总钥匙，发展就是最大的安全。安全是发展的条件和保障，没有国家安全，发展只能是“镜花水月”，取得的成果也可能毁于一旦。3.要坚持发展和安全并重，把国家安全同经济社会发展一起谋划、一起部署。"><div class="q-head"><div class="qno">16</div><div class="qh"><h2>如何理解国家与安全的关系？</h2><div class="meta">参考答案 · 约 187 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="note">（发展和安全之间的关系）</p><p>1．发展解决的是动力问题，是推动国家和民族赓续绵延的根本支撑；安全解决的是保障问题，是确保国家和民族行稳致远的坚强柱石。</p><p class="li"><span class="n">2.</span>发展具有基础性、根本性，是解决安全问题的总钥匙，发展就是最大的安全。安全是发展的条件和保障，没有国家安全，发展只能是“镜花水月”，取得的成果也可能毁于一旦。</p><p class="li"><span class="n">3.</span>要坚持发展和安全并重，把国家安全同经济社会发展一起谋划、一起部署。</p></div></article>
+<article class="q" id="q17" data-n="17" data-k="为什么加快构建新发展格局是实现高质量发展的战略基点？1.把握未来发展主动权的战略部署，构建新发展格局是事关全局的系统性、深层次变革，是立足当前、着眼长远的战略谋划，是适应我国发展新阶段要求、塑造国际合作和竞争新优势的必然选择。2.以国内大循环为主体、国内国际双循环相互促进。构建新发展格局必须具备强大的国内经济循环体系和稳固的基本盘。以国内大循环吸引全球资源要素。要保证经济循环的畅通无阻，实现生产、分配、流通、消费各环节有机衔接。3.大力推动构建新发展格局。着力推动实施扩大内需战略同深化供给侧结构性改革有机结合、着力发展实体经济、着力加快科技自立自强、着力推动产业链供应链优化升级。"><div class="q-head"><div class="qno">17</div><div class="qh"><h2>为什么加快构建新发展格局是实现高质量发展的战略基点？</h2><div class="meta">参考答案 · 约 267 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>把握未来发展主动权的战略部署，构建新发展格局是事关全局的系统性、深层次变革，是立足当前、着眼长远的战略谋划，是适应我国发展新阶段要求、塑造国际合作和竞争新优势的必然选择。</p><p class="li"><span class="n">2.</span>以国内大循环为主体、国内国际双循环相互促进。构建新发展格局必须具备强大的国内经济循环体系和稳固的基本盘。以国内大循环吸引全球资源要素。要保证经济循环的畅通无阻，实现生产、分配、流通、消费各环节有机衔接。</p><p class="li"><span class="n">3.</span>大力推动构建新发展格局。着力推动实施扩大内需战略同深化供给侧结构性改革有机结合、着力发展实体经济、着力加快科技自立自强、着力推动产业链供应链优化升级。</p></div></article>
+<article class="q" id="q18" data-n="18" data-k="谈一谈对新质生产力的理解（开放，不少于四点，围绕习近平经济思想）1.提出与定位：2023年习近平在黑龙江考察时提出“新质生产力”。发展新质生产力是推动高质量发展的内在要求和重要着力点，是习近平经济思想的重要内容。2.内涵：新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新发展理念的先进生产力质态。3.形成逻辑：由技术革命性突破、生产要素创新性配置、产业深度转型升级而催生，以劳动者、劳动资料、劳动对象及其优化组合的跃升为基本内涵，以全要素生产率大幅提升为核心标志。4.本质特征：本质是先进生产力，特点是创新，关键在质优；新质生产力本身就是绿色生产力。5.路径：以科技创新引领产业创新，培育壮大新兴产业、布局未来产业、改造提升传统产业；因地制宜发展，防止一哄而上、泡沫化。6.生产关系与意义：发展新质生产力必须进一步全面深化改革，形成与之相适应的新型生产关系；这有利于赢得发展主动权、塑造国际竞争新优势，为全面建设社会主义现代化国家提供坚实支撑。"><div class="q-head"><div class="qno">18</div><div class="qh"><h2>谈一谈对新质生产力的理解（开放，不少于四点，围绕习近平经济思想）</h2><div class="meta">参考答案 · 约 418 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>提出与定位：2023年习近平在黑龙江考察时提出“新质生产力”。发展新质生产力是推动高质量发展的内在要求和重要着力点，是习近平经济思想的重要内容。</p><p class="li"><span class="n">2.</span>内涵：新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新发展理念的先进生产力质态。</p><p class="li"><span class="n">3.</span>形成逻辑：由技术革命性突破、生产要素创新性配置、产业深度转型升级而催生，以劳动者、劳动资料、劳动对象及其优化组合的跃升为基本内涵，以全要素生产率大幅提升为核心标志。</p><p class="li"><span class="n">4.</span>本质特征：本质是先进生产力，特点是创新，关键在质优；新质生产力本身就是绿色生产力。</p><p class="li"><span class="n">5.</span>路径：以科技创新引领产业创新，培育壮大新兴产业、布局未来产业、改造提升传统产业；因地制宜发展，防止一哄而上、泡沫化。</p><p class="li"><span class="n">6.</span>生产关系与意义：发展新质生产力必须进一步全面深化改革，形成与之相适应的新型生产关系；这有利于赢得发展主动权、塑造国际竞争新优势，为全面建设社会主义现代化国家提供坚实支撑。</p></div></article>
+<article class="q" id="q19" data-n="19" data-k="论述全面依法治国是国家治理的一场深刻革命1.法律是治国之重器，法治是国家治理体系和治理能力的重要依托。2.全面依法治国，是完善和发展中国特色社会主义制度、推进国家治理体系和治理能力现代化的重要方面，是坚持和发展中国特色社会主义的本质要求和重要保障。3.党的十八大以来，以习近平同志为核心的党中央从坚持和发展中国特色社会主义的全局和战略高度定位法治、布局法治、厉行法治，把全面依法治国纳入“四个全面”战略布局，推动社会主义法治国家建设取得历史性成就。"><div class="q-head"><div class="qno">19</div><div class="qh"><h2>论述全面依法治国是国家治理的一场深刻革命</h2><div class="meta">参考答案 · 约 204 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>法律是治国之重器，法治是国家治理体系和治理能力的重要依托。</p><p class="li"><span class="n">2.</span>全面依法治国，是完善和发展中国特色社会主义制度、推进国家治理体系和治理能力现代化的重要方面，是坚持和发展中国特色社会主义的本质要求和重要保障。</p><p class="li"><span class="n">3.</span>党的十八大以来，以习近平同志为核心的党中央从坚持和发展中国特色社会主义的全局和战略高度定位法治、布局法治、厉行法治，把全面依法治国纳入“四个全面”战略布局，推动社会主义法治国家建设取得历史性成就。</p></div></article>
+<article class="q" id="q20" data-n="20" data-k="如何理解中国特色社会主义新时代是我国发展新的历史方位？1.中国特色社会主义进入新时代，是长期以来特别是党的十八大以来我们党领导人民不懈奋斗的必然结果。2.中国特色社会主义新时代，是承前启后、继往开来、在新的历史条件下继续夺取中国特色社会主义伟大胜利的时代。3.中国特色社会主义进入新时代，是我国社会主要矛盾变为人民日益增长的美好生活需要和不平衡不充分发展之间的矛盾的反映。4.中国特色社会主义进入新时代，是党的主要任务发生新变化的反映。5.中国特色社会主义进入新时代，是中国和世界关系发生新变化的反映。"><div class="q-head"><div class="qno">20</div><div class="qh"><h2>如何理解中国特色社会主义新时代是我国发展新的历史方位？</h2><div class="meta">参考答案 · 约 224 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>中国特色社会主义进入新时代，是长期以来特别是党的十八大以来我们党领导人民不懈奋斗的必然结果。</p><p class="li"><span class="n">2.</span>中国特色社会主义新时代，是承前启后、继往开来、在新的历史条件下继续夺取中国特色社会主义伟大胜利的时代。</p><p class="li"><span class="n">3.</span>中国特色社会主义进入新时代，是我国社会主要矛盾变为人民日益增长的美好生活需要和不平衡不充分发展之间的矛盾的反映。</p><p class="li"><span class="n">4.</span>中国特色社会主义进入新时代，是党的主要任务发生新变化的反映。</p><p class="li"><span class="n">5.</span>中国特色社会主义进入新时代，是中国和世界关系发生新变化的反映。</p></div></article>
+<article class="q" id="q21" data-n="21" data-k="结合习近平生态思想，阐释如何加快发展方式，绿色转型。1.加快推动产业结构、能源结构、交通运输结构等调整优化。2.推进各类资源节约集约利用。3.积极稳妥推进碳达峰碳中和。4.健全绿色发展的保障体系。5.坚持把建设美丽中国转化为全体人民自觉行动。"><div class="q-head"><div class="qno">21</div><div class="qh"><h2>结合习近平生态思想，阐释如何加快发展方式，绿色转型。</h2><div class="meta">参考答案 · 约 95 字</div></div><label class="ck"><input type="checkbox" class="donebox"><span>未背</span></label></div><div class="q-body"><p class="li"><span class="n">1.</span>加快推动产业结构、能源结构、交通运输结构等调整优化。</p><p class="li"><span class="n">2.</span>推进各类资源节约集约利用。</p><p class="li"><span class="n">3.</span>积极稳妥推进碳达峰碳中和。</p><p class="li"><span class="n">4.</span>健全绿色发展的保障体系。</p><p class="li"><span class="n">5.</span>坚持把建设美丽中国转化为全体人民自觉行动。</p></div></article></main>
+<footer class="wrap"><p>内容据《习近平新时代中国特色社会主义思想概论》（2023 年版）与老师课上划的重点整理 · 仅供个人复习</p><p>认准网址，收藏到手机桌面即可离线查看（首次打开后浏览器会缓存）。</p></footer>
+<button id="top" title="回到顶部">↑</button>
 <script>
-(function(){
-  var $=function(s,c){return (c||document).querySelector(s)};
-  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
-  var cards=$$('article.card'), links=$$('nav.side a'), details=$$('details');
-
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if(e.isIntersecting){
-          links.forEach(function(a){
-            a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id);
-          });
-        }
-      });
-    },{rootMargin:'-15% 0px -75% 0px'});
-    cards.forEach(function(c){io.observe(c)});
-  }
-
-  var ex=$('#expandAll'), co=$('#collapseAll');
-  if(ex) ex.onclick=function(){details.forEach(function(d){d.open=true})};
-  if(co) co.onclick=function(){details.forEach(function(d){d.open=false});scrollTo({top:0,behavior:'smooth'})};
-
-  var q=$('#q');
-  if(q) q.addEventListener('input',function(){
-    var v=q.value.trim().toLowerCase();
-    cards.forEach(function(c){
-      c.style.display=(!v||c.innerText.toLowerCase().indexOf(v)>-1)?'':'none';
-    });
-  });
-
-  function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-  function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+var KEY='xk21_done';
+var done=new Set();
+try{done=new Set(JSON.parse(localStorage.getItem(KEY)||'[]').map(Number));}catch(e){}
+var cards=[].slice.call(document.querySelectorAll('.q'));
+function save(){try{localStorage.setItem(KEY,JSON.stringify([].slice.call(done)));}catch(e){}}
+function paint(){
+  document.getElementById('pc').textContent=done.size+' / '+cards.length;
+  document.getElementById('pg').style.width=(done.size/cards.length*100)+'%';
   cards.forEach(function(c){
-    var cb=$('.donebox',c); if(!cb) return;
-    var key='xigai-done-'+c.id;
-    if(load(key)==='1'){cb.checked=true;c.classList.add('done')}
-    cb.addEventListener('change',function(){
-      c.classList.toggle('done',cb.checked);
-      store(key,cb.checked?'1':'0');
-      var done=$$('.donebox').filter(function(x){return x.checked}).length;
-      var b=$('.brand small'); if(b) b.textContent=done+' / '+cards.length+' 已背';
-    });
+    var n=+c.getAttribute('data-n');
+    var on=done.has(n);
+    c.querySelector('.donebox').checked=on;
+    c.querySelector('.ck span').textContent=on?'已背':'未背';
+    c.classList.toggle('no',on);
   });
-  var doneNow=$$('.donebox').filter(function(x){return x.checked}).length;
-  var b0=$('.brand small'); if(b0&&doneNow) b0.textContent=doneNow+' / '+cards.length+' 已背';
-
-  window.addEventListener('beforeprint',function(){
-    details.forEach(function(d){ if(!d.open){d.setAttribute('data-reopen','1'); d.open=true} });
+  document.querySelectorAll('#chips a').forEach(function(a){
+    a.classList.toggle('done',done.has(+a.getAttribute('data-n')));
   });
-  window.addEventListener('afterprint',function(){
-    details.forEach(function(d){ if(d.getAttribute('data-reopen')){d.open=false; d.removeAttribute('data-reopen')} });
+}
+cards.forEach(function(c){
+  c.querySelector('.donebox').addEventListener('click',function(e){
+    e.stopPropagation();
+    var n=+c.getAttribute('data-n');
+    if(this.checked){done.add(n);}else{done.delete(n);}
+    save();paint();
   });
-
-  var t=$('#toTop');
-  if(t){
-    window.addEventListener('scroll',function(){t.style.display=window.scrollY>600?'block':'none'});
-    t.onclick=function(){scrollTo({top:0,behavior:'smooth'})};
-  }
-})();
-</script>
-</body>
-</html>
+  c.querySelector('.q-head').addEventListener('click',function(e){
+    if(e.target.tagName==='INPUT')return;
+    c.classList.toggle('open');
+  });
+});
+document.getElementById('open').onclick=function(){cards.forEach(function(c){c.classList.add('open');});};
+document.getElementById('close').onclick=function(){cards.forEach(function(c){c.classList.remove('open');});};
+document.getElementById('undone').onclick=function(){
+  var b=this;b.classList.toggle('on');
+  var on=b.classList.contains('on');
+  cards.forEach(function(c){
+    var show=!on||!done.has(+c.getAttribute('data-n'));
+    c.style.display=show?'':'none';
+  });
+};
+var s=document.getElementById('s');
+s.addEventListener('input',function(){
+  var q=s.value.trim().toLowerCase();
+  cards.forEach(function(c){
+    var hit=!q||c.getAttribute('data-k').indexOf(q)>-1;
+    c.style.display=hit?'':'none';
+  });
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='/'&&document.activeElement!==s){e.preventDefault();s.focus();}
+  if(e.key==='Escape'){s.value='';s.dispatchEvent(new Event('input'));s.blur();}
+});
+var top=document.getElementById('top');
+window.addEventListener('scroll',function(){top.classList.toggle('show',window.scrollY>600);},{passive:true});
+top.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+function openHash(){var h=location.hash;if(!h||h.length<2)return;var el=document.querySelector(h);if(el&&el.classList.contains('q')){el.classList.add('open');el.scrollIntoView({block:'start'});}}
+window.addEventListener('hashchange',openHash);openHash();
+paint();
+</script></body></html>
